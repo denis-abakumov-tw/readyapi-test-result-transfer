@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIScenariosResults>
+  <item>
+    <scenariosCount>2</scenariosCount>
+    <scenarioName>REST</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>1116</timeTaken>
+        <size>3859</size>
+        <startTime>16:30:10</startTime>
+        <testCaseName>User Service API Test Suite:/directory/users Test Case->searchDirectoryUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>1113</timeTaken>
+        <size>6362</size>
+        <startTime>16:30:13</startTime>
+        <testCaseName>User Service API Test Suite:/directory/users/{email}/contacts Test Case->getContacts</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>1048</timeTaken>
+        <size>6362</size>
+        <startTime>16:31:18</startTime>
+        <testCaseName>User Service API Test Suite:/directory/users/{email}/contacts Test Case->getContacts</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>969</timeTaken>
+        <size>6362</size>
+        <startTime>16:31:24</startTime>
+        <testCaseName>User Service API Test Suite:/directory/users/{email}/contacts Test Case->getContacts</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>953</timeTaken>
+        <size>88</size>
+        <startTime>16:31:26</startTime>
+        <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>861</maxTime>
+        <targetName>User Service API Test Suite:/food-ordering/{locationId} Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>861.00</percentile98>
+        <medianTime>144</medianTime>
+        <averageTime>198</averageTime>
+        <percentile75>151.75</percentile75>
+        <minTime>134</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>844.75</percentile95>
+        <percentile90>499.20</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>179</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>166</maxTime>
+        <targetName>User Service API Test Suite:/directory/users/{email} Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>166.00</percentile98>
+        <medianTime>69</medianTime>
+        <averageTime>76</averageTime>
+        <percentile75>85.75</percentile75>
+        <minTime>58</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>162.60</percentile95>
+        <percentile90>97.70</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>25</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>1116</maxTime>
+        <targetName>User Service API Test Suite:/directory/users Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>1116.00</percentile98>
+        <medianTime>144</medianTime>
+        <averageTime>204</averageTime>
+        <percentile75>166.50</percentile75>
+        <minTime>124</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>1078.10</percentile95>
+        <percentile90>341.80</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>220</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>1113</maxTime>
+        <targetName>User Service API Test Suite:/directory/users/{email}/contacts Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>1113.00</percentile98>
+        <medianTime>502</medianTime>
+        <averageTime>594</averageTime>
+        <percentile75>598.00</percentile75>
+        <minTime>434</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>1109.75</percentile95>
+        <percentile90>1040.10</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>211</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>953</maxTime>
+        <targetName>User Service API Test Suite:/swift-connect-auth/{user} Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>953.00</percentile98>
+        <medianTime>46</medianTime>
+        <averageTime>123</averageTime>
+        <percentile75>65.75</percentile75>
+        <minTime>37</minTime>
+        <failuresCount>19</failuresCount>
+        <percentile95>926.15</percentile95>
+        <percentile90>404.40</percentile90>
+        <failuresRatio>95</failuresRatio>
+        <standardDeviation>218</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>37</timeTaken>
+        <size>88</size>
+        <startTime>16:31:48</startTime>
+        <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>37</timeTaken>
+        <size>88</size>
+        <startTime>16:31:54</startTime>
+        <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>38</timeTaken>
+        <size>88</size>
+        <startTime>16:31:12</startTime>
+        <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>40</timeTaken>
+        <size>88</size>
+        <startTime>16:30:15</startTime>
+        <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>40</timeTaken>
+        <size>88</size>
+        <startTime>16:30:54</startTime>
+        <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>19%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>100</param1Value>
+        <param2Value>19</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>39%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>99</param1Value>
+        <param2Value>39</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>239</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>1116</param1Value>
+        <param2Value>37</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>861</maxTime>
+        <targetName>User Service API Test Suite:/food-ordering/{locationId} Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>861.00</percentile98>
+        <medianTime>144</medianTime>
+        <averageTime>198</averageTime>
+        <percentile75>151.75</percentile75>
+        <minTime>134</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>844.75</percentile95>
+        <percentile90>499.20</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>179</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>166</maxTime>
+        <targetName>User Service API Test Suite:/directory/users/{email} Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>166.00</percentile98>
+        <medianTime>69</medianTime>
+        <averageTime>76</averageTime>
+        <percentile75>85.75</percentile75>
+        <minTime>58</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>162.60</percentile95>
+        <percentile90>97.70</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>25</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>1116</maxTime>
+        <targetName>User Service API Test Suite:/directory/users Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>1116.00</percentile98>
+        <medianTime>144</medianTime>
+        <averageTime>204</averageTime>
+        <percentile75>166.50</percentile75>
+        <minTime>124</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>1078.10</percentile95>
+        <percentile90>341.80</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>220</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>1113</maxTime>
+        <targetName>User Service API Test Suite:/directory/users/{email}/contacts Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>1113.00</percentile98>
+        <medianTime>502</medianTime>
+        <averageTime>594</averageTime>
+        <percentile75>598.00</percentile75>
+        <minTime>434</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>1109.75</percentile95>
+        <percentile90>1040.10</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>211</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>953</maxTime>
+        <targetName>User Service API Test Suite:/swift-connect-auth/{user} Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>953.00</percentile98>
+        <medianTime>46</medianTime>
+        <averageTime>123</averageTime>
+        <percentile75>65.75</percentile75>
+        <minTime>37</minTime>
+        <failuresCount>19</failuresCount>
+        <percentile95>926.15</percentile95>
+        <percentile90>404.40</percentile90>
+        <failuresRatio>95</failuresRatio>
+        <standardDeviation>218</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>5</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>10 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>2</scenariosCount>
+    <scenarioName>GraphQL</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>1558</timeTaken>
+        <size>970</size>
+        <startTime>16:31:26</startTime>
+        <testCaseName>User Service API Test Suite:getVehiclesById Test Case->getVehiclesById</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>645</timeTaken>
+        <size>970</size>
+        <startTime>16:31:19</startTime>
+        <testCaseName>User Service API Test Suite:getVehiclesById Test Case->getVehiclesById</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>407</timeTaken>
+        <size>5440</size>
+        <startTime>16:30:07</startTime>
+        <testCaseName>User Service API Test Suite:getVisitorByHostId Test Case->getVisitorByHostId</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>270</timeTaken>
+        <size>5440</size>
+        <startTime>16:31:19</startTime>
+        <testCaseName>User Service API Test Suite:getVisitorByHostId Test Case->getVisitorByHostId</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>265</timeTaken>
+        <size>44</size>
+        <startTime>16:31:27</startTime>
+        <testCaseName>User Service API Test Suite:getProxyRelationshipsByProxy Test Case->getProxyRelationshipsByProxy</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>1558</maxTime>
+        <targetName>User Service API Test Suite:getVehiclesById Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>1558.00</percentile98>
+        <medianTime>47</medianTime>
+        <averageTime>161</averageTime>
+        <percentile75>78.75</percentile75>
+        <minTime>40</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>1512.35</percentile95>
+        <percentile90>593.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>355</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>407</maxTime>
+        <targetName>User Service API Test Suite:getVisitorByHostId Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>407.00</percentile98>
+        <medianTime>60</medianTime>
+        <averageTime>104</averageTime>
+        <percentile75>121.00</percentile75>
+        <minTime>47</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>400.15</percentile95>
+        <percentile90>264.10</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>95</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>64</maxTime>
+        <targetName>User Service API Test Suite:getNotificationSettings Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>64.00</percentile98>
+        <medianTime>44</medianTime>
+        <averageTime>45</averageTime>
+        <percentile75>47.00</percentile75>
+        <minTime>39</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>63.45</percentile95>
+        <percentile90>52.60</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>6</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>176</maxTime>
+        <targetName>User Service API Test Suite:getProxyRelationshipByHolder Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>176.00</percentile98>
+        <medianTime>44</medianTime>
+        <averageTime>54</averageTime>
+        <percentile75>53.75</percentile75>
+        <minTime>40</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>170.95</percentile95>
+        <percentile90>74.70</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>30</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>265</maxTime>
+        <targetName>User Service API Test Suite:getProxyRelationshipsByProxy Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>265.00</percentile98>
+        <medianTime>43</medianTime>
+        <averageTime>56</averageTime>
+        <percentile75>46.75</percentile75>
+        <minTime>39</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>255.30</percentile95>
+        <percentile90>70.20</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>50</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>39</timeTaken>
+        <size>605</size>
+        <startTime>16:32:01</startTime>
+        <testCaseName>User Service API Test Suite:getNotificationSettings Test Case->getNotificationSettings</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>39</timeTaken>
+        <size>44</size>
+        <startTime>16:31:43</startTime>
+        <testCaseName>User Service API Test Suite:getProxyRelationshipsByProxy Test Case->getProxyRelationshipsByProxy</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>39</timeTaken>
+        <size>44</size>
+        <startTime>16:31:49</startTime>
+        <testCaseName>User Service API Test Suite:getProxyRelationshipsByProxy Test Case->getProxyRelationshipsByProxy</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>39</timeTaken>
+        <size>44</size>
+        <startTime>16:31:55</startTime>
+        <testCaseName>User Service API Test Suite:getProxyRelationshipsByProxy Test Case->getProxyRelationshipsByProxy</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>40</timeTaken>
+        <size>970</size>
+        <startTime>16:31:54</startTime>
+        <testCaseName>User Service API Test Suite:getVehiclesById Test Case->getVehiclesById</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>100</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>100</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>84</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>1558</param1Value>
+        <param2Value>39</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>1558</maxTime>
+        <targetName>User Service API Test Suite:getVehiclesById Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>1558.00</percentile98>
+        <medianTime>47</medianTime>
+        <averageTime>161</averageTime>
+        <percentile75>78.75</percentile75>
+        <minTime>40</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>1512.35</percentile95>
+        <percentile90>593.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>355</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>407</maxTime>
+        <targetName>User Service API Test Suite:getVisitorByHostId Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>407.00</percentile98>
+        <medianTime>60</medianTime>
+        <averageTime>104</averageTime>
+        <percentile75>121.00</percentile75>
+        <minTime>47</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>400.15</percentile95>
+        <percentile90>264.10</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>95</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>64</maxTime>
+        <targetName>User Service API Test Suite:getNotificationSettings Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>64.00</percentile98>
+        <medianTime>44</medianTime>
+        <averageTime>45</averageTime>
+        <percentile75>47.00</percentile75>
+        <minTime>39</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>63.45</percentile95>
+        <percentile90>52.60</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>6</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>176</maxTime>
+        <targetName>User Service API Test Suite:getProxyRelationshipByHolder Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>176.00</percentile98>
+        <medianTime>44</medianTime>
+        <averageTime>54</averageTime>
+        <percentile75>53.75</percentile75>
+        <minTime>40</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>170.95</percentile95>
+        <percentile90>74.70</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>30</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>265</maxTime>
+        <targetName>User Service API Test Suite:getProxyRelationshipsByProxy Test Case</targetName>
+        <requestsCount>20</requestsCount>
+        <percentile98>265.00</percentile98>
+        <medianTime>43</medianTime>
+        <averageTime>56</averageTime>
+        <percentile75>46.75</percentile75>
+        <minTime>39</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>255.30</percentile95>
+        <percentile90>70.20</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>50</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>5</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>10 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+</LoadUIScenariosResults>

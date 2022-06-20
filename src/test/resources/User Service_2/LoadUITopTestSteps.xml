@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUITopTestSteps>
+  <executionNotable>
+    <timeTaken>33</timeTaken>
+    <size>597</size>
+    <startTime>22:59:40</startTime>
+    <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>33</timeTaken>
+    <size>597</size>
+    <startTime>22:59:52</startTime>
+    <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>33</timeTaken>
+    <size>597</size>
+    <startTime>23:00:16</startTime>
+    <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>34</timeTaken>
+    <size>597</size>
+    <startTime>22:58:58</startTime>
+    <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>34</timeTaken>
+    <size>597</size>
+    <startTime>22:59:04</startTime>
+    <testCaseName>User Service API Test Suite:/swift-connect-auth/{user} Test Case->loginUser</testCaseName>
+  </executionNotable>
+</LoadUITopTestSteps>

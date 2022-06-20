@@ -1,30 +1,58 @@
 package ca.thoughtwire.readyapi.testresulttransfer.models;
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.math.BigInteger;
 
 @Entity
+@Table(name = "performance_result")
+@NoArgsConstructor
 @Getter
 @Setter
 public class PerformanceResult {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    @Column(name = "id")
+    private int id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "test_execution_id", nullable = false)
-    private TestExecution testExecution;
+    @Basic
+    @Column(name = "time_sec")
+    private BigInteger secondsFromStart;
 
-    private Long seconds;
+    @Basic
+    @Column(name = "min_ms")
+    private BigInteger minRequestTimeMs;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "performance_metric_id", nullable = false)
-    private PerformanceMetric performanceMetric;
+    @Basic
+    @Column(name = "max_ms")
+    private BigInteger maxRequestTimeMs;
 
-    private BigDecimal amount;
+    @Basic
+    @Column(name = "median_ms")
+    private BigInteger medianRequestTimeMs;
+
+    @Basic
+    @Column(name = "last_ms")
+    private BigInteger lastRequestTimeMs;
+
+    @Basic
+    @Column(name = "cnt")
+    private BigInteger requestCount;
+
+    @Basic
+    @Column(name = "tps")
+    private BigInteger transactionsPerSecond;
+
+    @Basic
+    @Column(name = "err")
+    private BigInteger errorsPerSecond;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private TestCaseExecution testCaseExecution;
 
 }

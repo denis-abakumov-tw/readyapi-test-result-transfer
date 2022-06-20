@@ -4,29 +4,44 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.Objects;
 
 @Entity
-@Getter
+@Table(name = "test_type")
 @NoArgsConstructor
+@Getter
+@Setter
 public class TestType {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    @Column(name = "id")
+    private int id;
 
-    @Setter
+    @Basic
+    @Column(name = "name")
     private String name;
 
-    public TestType(Long id) {
-        this.id = id;
+    @OneToMany
+    private Collection<TestSuite> testSuitesById;
+
+    public TestType(String testTypeName) {
+        this.name = testTypeName;
     }
 
-    public TestType(String name) {
-        this.name = name;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TestType testType = (TestType) o;
+        return id == testType.id && name.equals(testType.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
     }
 
 }

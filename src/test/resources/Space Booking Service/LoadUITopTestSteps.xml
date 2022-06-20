@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUITopTestSteps>
+  <executionNotable>
+    <timeTaken>30</timeTaken>
+    <size>648</size>
+    <startTime>16:38:17</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>30</timeTaken>
+    <size>648</size>
+    <startTime>16:38:20</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>30</timeTaken>
+    <size>648</size>
+    <startTime>16:38:37</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>30</timeTaken>
+    <size>648</size>
+    <startTime>16:39:15</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>30</timeTaken>
+    <size>648</size>
+    <startTime>16:39:27</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+  </executionNotable>
+</LoadUITopTestSteps>

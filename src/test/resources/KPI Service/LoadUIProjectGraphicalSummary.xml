@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIProjectGraphicalSummary>
+  <data>
+    <pieParam2>Failed test cases</pieParam2>
+    <pieParam1>Passed test cases</pieParam1>
+    <metricsTitle/>
+    <param1Name>Test case runs, including loops</param1Name>
+    <param2Name>Failed test cases</param2Name>
+    <title>Information on target test cases</title>
+    <param3Value>0%</param3Value>
+    <hintText/>
+    <param3Name>Failure ratio</param3Name>
+    <param1Value>3705</param1Value>
+    <param2Value>0</param2Value>
+  </data>
+  <data>
+    <pieParam2>Failed test steps</pieParam2>
+    <pieParam1>Passed test steps</pieParam1>
+    <metricsTitle/>
+    <param1Name>Test step runs, including loops</param1Name>
+    <param2Name>Failed test steps</param2Name>
+    <title>Executed test step(s) summary</title>
+    <param3Value>0%</param3Value>
+    <hintText/>
+    <param3Name>Failure ratio</param3Name>
+    <param1Value>3705</param1Value>
+    <param2Value>0</param2Value>
+  </data>
+  <data>
+    <pieParam2>Minimum</pieParam2>
+    <pieParam1>Maximum</pieParam1>
+    <metricsTitle>ms</metricsTitle>
+    <param1Name>Maximum</param1Name>
+    <param2Name>Minimum</param2Name>
+    <title>Time taken</title>
+    <param3Value>40.33</param3Value>
+    <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+    <param3Name>Average</param3Name>
+    <param1Value>1077</param1Value>
+    <param2Value>30</param2Value>
+  </data>
+</LoadUIProjectGraphicalSummary>

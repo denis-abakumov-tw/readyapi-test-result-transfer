@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIScenariosSummary>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>1203</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>REST</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>2501</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>GraphQL</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+</LoadUIScenariosSummary>

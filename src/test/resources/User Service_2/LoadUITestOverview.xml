@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUITestOverview>
+  <loadUITestField>
+    <icon>/project.png</icon>
+    <name>Project name</name>
+    <category>Test properties</category>
+    <value>@Work Services</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Project description</name>
+    <category>Test properties</category>
+    <value/>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Test name</name>
+    <category>Test properties</category>
+    <value>User Service Performance Test</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Test duration</name>
+    <category>Test properties</category>
+    <value>2:00</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Warm-up time</name>
+    <category>Test properties</category>
+    <value>5 sec</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Load type</name>
+    <category>Load allocation</category>
+    <value>Rate</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Allocation type</name>
+    <category>Load allocation</category>
+    <value>Per Scenario</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Scenarios in the test</name>
+    <category>Load test overview</category>
+    <value>2</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Load agents used</name>
+    <category>Load test overview</category>
+    <value>0</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Cloud agents used</name>
+    <category>Load test overview</category>
+    <value>0</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Servers monitored</name>
+    <category>Load test overview</category>
+    <value>0</value>
+  </loadUITestField>
+  <loadUITestField>
+    <name>Test assertions (all levels)</name>
+    <category>Load test overview</category>
+    <value>1</value>
+  </loadUITestField>
+</LoadUITestOverview>

@@ -1,0 +1,1125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIScenariosResults>
+  <item>
+    <scenariosCount>6</scenariosCount>
+    <scenarioName>getBookableAmenities</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>97</timeTaken>
+        <size>3880</size>
+        <startTime>16:39:29</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>91</timeTaken>
+        <size>3880</size>
+        <startTime>16:38:19</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>75</timeTaken>
+        <size>3880</size>
+        <startTime>16:39:14</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>73</timeTaken>
+        <size>3880</size>
+        <startTime>16:39:47</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>71</timeTaken>
+        <size>3880</size>
+        <startTime>16:38:42</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>97</maxTime>
+        <targetName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}</targetName>
+        <requestsCount>46</requestsCount>
+        <percentile98>97.00</percentile98>
+        <medianTime>61</medianTime>
+        <averageTime>63</averageTime>
+        <percentile75>63.25</percentile75>
+        <minTime>57</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>85.40</percentile95>
+        <percentile90>71.60</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>8</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>57</timeTaken>
+        <size>3880</size>
+        <startTime>16:39:42</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>57</timeTaken>
+        <size>3880</size>
+        <startTime>16:40:00</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>58</timeTaken>
+        <size>3880</size>
+        <startTime>16:38:37</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>58</timeTaken>
+        <size>3880</size>
+        <startTime>16:39:08</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>58</timeTaken>
+        <size>3880</size>
+        <startTime>16:39:37</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}->getBookableAmenities</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>46</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>46</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>63</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>97</param1Value>
+        <param2Value>57</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>97</maxTime>
+        <targetName>Space Booking Service API Test Suite:/amenity/bookableAmenities/{locationID}</targetName>
+        <requestsCount>46</requestsCount>
+        <percentile98>97.00</percentile98>
+        <medianTime>61</medianTime>
+        <averageTime>63</averageTime>
+        <percentile75>63.25</percentile75>
+        <minTime>57</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>85.40</percentile95>
+        <percentile90>71.60</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>8</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>23 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>6</scenariosCount>
+    <scenarioName>getAmenityReservationsForUser</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>491</timeTaken>
+        <size>436</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>397</timeTaken>
+        <size>436</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>242</timeTaken>
+        <size>436</size>
+        <startTime>16:38:19</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>235</timeTaken>
+        <size>436</size>
+        <startTime>16:39:16</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>233</timeTaken>
+        <size>436</size>
+        <startTime>16:39:29</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>235</maxTime>
+        <targetName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}</targetName>
+        <requestsCount>239</requestsCount>
+        <percentile98>233.40</percentile98>
+        <medianTime>106</medianTime>
+        <averageTime>128</averageTime>
+        <percentile75>168.00</percentile75>
+        <minTime>89</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>197.00</percentile95>
+        <percentile90>191.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>49</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>89</timeTaken>
+        <size>436</size>
+        <startTime>16:38:42</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>89</timeTaken>
+        <size>436</size>
+        <startTime>16:39:43</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>89</timeTaken>
+        <size>436</size>
+        <startTime>16:40:08</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>90</timeTaken>
+        <size>436</size>
+        <startTime>16:38:48</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>90</timeTaken>
+        <size>436</size>
+        <startTime>16:38:50</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>239</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>239</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>128</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>235</param1Value>
+        <param2Value>89</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>235</maxTime>
+        <targetName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}</targetName>
+        <requestsCount>239</requestsCount>
+        <percentile98>233.40</percentile98>
+        <medianTime>106</medianTime>
+        <averageTime>128</averageTime>
+        <percentile75>168.00</percentile75>
+        <minTime>89</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>197.00</percentile95>
+        <percentile90>191.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>49</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>115 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>6</scenariosCount>
+    <scenarioName>getBookableSpaces</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>488</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>444</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>392</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>370</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>265</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:30</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>265</maxTime>
+        <targetName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}</targetName>
+        <requestsCount>481</requestsCount>
+        <percentile98>183.08</percentile98>
+        <medianTime>74</medianTime>
+        <averageTime>83</averageTime>
+        <percentile75>80.00</percentile75>
+        <minTime>65</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>117.90</percentile95>
+        <percentile90>95.80</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>38</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>65</timeTaken>
+        <size>77540</size>
+        <startTime>16:40:08</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>66</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:36</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>67</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:41</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>67</timeTaken>
+        <size>77588</size>
+        <startTime>16:38:41</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>67</timeTaken>
+        <size>77588</size>
+        <startTime>16:39:09</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>481</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>481</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>83</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>265</param1Value>
+        <param2Value>65</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>265</maxTime>
+        <targetName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}</targetName>
+        <requestsCount>481</requestsCount>
+        <percentile98>183.08</percentile98>
+        <medianTime>74</medianTime>
+        <averageTime>83</averageTime>
+        <percentile75>80.00</percentile75>
+        <minTime>65</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>117.90</percentile95>
+        <percentile90>95.80</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>38</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>231 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>6</scenariosCount>
+    <scenarioName>findUsers</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>187</timeTaken>
+        <size>120</size>
+        <startTime>16:38:50</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>183</timeTaken>
+        <size>120</size>
+        <startTime>16:38:55</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>182</timeTaken>
+        <size>120</size>
+        <startTime>16:39:37</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>179</timeTaken>
+        <size>120</size>
+        <startTime>16:39:24</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>177</timeTaken>
+        <size>120</size>
+        <startTime>16:39:11</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>187</maxTime>
+        <targetName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}</targetName>
+        <requestsCount>95</requestsCount>
+        <percentile98>183.32</percentile98>
+        <medianTime>37</medianTime>
+        <averageTime>58</averageTime>
+        <percentile75>50.00</percentile75>
+        <minTime>31</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>177.40</percentile95>
+        <percentile90>167.40</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>47</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>31</timeTaken>
+        <size>120</size>
+        <startTime>16:39:36</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>31</timeTaken>
+        <size>120</size>
+        <startTime>16:40:10</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>32</timeTaken>
+        <size>120</size>
+        <startTime>16:38:17</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>32</timeTaken>
+        <size>120</size>
+        <startTime>16:38:41</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>32</timeTaken>
+        <size>120</size>
+        <startTime>16:38:51</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}->findUsers</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>95</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>95</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>58</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>187</param1Value>
+        <param2Value>31</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>187</maxTime>
+        <targetName>Space Booking Service API Test Suite:/find/users/{locationID}/{searchString}</targetName>
+        <requestsCount>95</requestsCount>
+        <percentile98>183.32</percentile98>
+        <medianTime>37</medianTime>
+        <averageTime>58</averageTime>
+        <percentile75>50.00</percentile75>
+        <minTime>31</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>177.40</percentile95>
+        <percentile90>167.40</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>47</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>46 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>6</scenariosCount>
+    <scenarioName>getReservationsForUser</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>579</timeTaken>
+        <size>4654</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>369</timeTaken>
+        <size>4654</size>
+        <startTime>16:39:16</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>358</timeTaken>
+        <size>4654</size>
+        <startTime>16:38:30</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>356</timeTaken>
+        <size>4654</size>
+        <startTime>16:39:00</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>348</timeTaken>
+        <size>4654</size>
+        <startTime>16:38:27</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>369</maxTime>
+        <targetName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}</targetName>
+        <requestsCount>191</requestsCount>
+        <percentile98>356.32</percentile98>
+        <medianTime>203</medianTime>
+        <averageTime>224</averageTime>
+        <percentile75>260.00</percentile75>
+        <minTime>163</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>324.80</percentile95>
+        <percentile90>296.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>54</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>163</timeTaken>
+        <size>4654</size>
+        <startTime>16:38:35</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>169</timeTaken>
+        <size>4654</size>
+        <startTime>16:39:25</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>170</timeTaken>
+        <size>4654</size>
+        <startTime>16:38:48</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>170</timeTaken>
+        <size>4654</size>
+        <startTime>16:39:59</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>172</timeTaken>
+        <size>4654</size>
+        <startTime>16:38:59</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>191</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>191</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>224</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>369</param1Value>
+        <param2Value>163</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>369</maxTime>
+        <targetName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}</targetName>
+        <requestsCount>191</requestsCount>
+        <percentile98>356.32</percentile98>
+        <medianTime>203</medianTime>
+        <averageTime>224</averageTime>
+        <percentile75>260.00</percentile75>
+        <minTime>163</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>324.80</percentile95>
+        <percentile90>296.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>54</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>92 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>6</scenariosCount>
+    <scenarioName>getSpaceDetail</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>259</timeTaken>
+        <size>648</size>
+        <startTime>16:38:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>114</timeTaken>
+        <size>648</size>
+        <startTime>16:39:13</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>106</timeTaken>
+        <size>648</size>
+        <startTime>16:38:30</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>104</timeTaken>
+        <size>648</size>
+        <startTime>16:38:31</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>90</timeTaken>
+        <size>648</size>
+        <startTime>16:39:00</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>114</maxTime>
+        <targetName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}</targetName>
+        <requestsCount>191</requestsCount>
+        <percentile98>104.32</percentile98>
+        <medianTime>33</medianTime>
+        <averageTime>37</averageTime>
+        <percentile75>35.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>55.40</percentile95>
+        <percentile90>42.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>20</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>648</size>
+        <startTime>16:38:17</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>648</size>
+        <startTime>16:38:20</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>648</size>
+        <startTime>16:38:37</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>648</size>
+        <startTime>16:39:15</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>648</size>
+        <startTime>16:39:27</startTime>
+        <testCaseName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}->getSpaceDetail</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>191</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>191</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>37</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>114</param1Value>
+        <param2Value>30</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>114</maxTime>
+        <targetName>Space Booking Service API Test Suite:/spaces/{locationId}/{zoneId}</targetName>
+        <requestsCount>191</requestsCount>
+        <percentile98>104.32</percentile98>
+        <medianTime>33</medianTime>
+        <averageTime>37</averageTime>
+        <percentile75>35.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>55.40</percentile95>
+        <percentile90>42.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>20</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>92 per MINUTES.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+</LoadUIScenariosResults>

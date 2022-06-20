@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIBottomTestSteps>
+  <executionNotable>
+    <timeTaken>1558</timeTaken>
+    <size>970</size>
+    <startTime>16:31:26</startTime>
+    <testCaseName>User Service API Test Suite:getVehiclesById Test Case->getVehiclesById</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>1116</timeTaken>
+    <size>3859</size>
+    <startTime>16:30:10</startTime>
+    <testCaseName>User Service API Test Suite:/directory/users Test Case->searchDirectoryUsers</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>1113</timeTaken>
+    <size>6362</size>
+    <startTime>16:30:13</startTime>
+    <testCaseName>User Service API Test Suite:/directory/users/{email}/contacts Test Case->getContacts</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>1048</timeTaken>
+    <size>6362</size>
+    <startTime>16:31:18</startTime>
+    <testCaseName>User Service API Test Suite:/directory/users/{email}/contacts Test Case->getContacts</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>969</timeTaken>
+    <size>6362</size>
+    <startTime>16:31:24</startTime>
+    <testCaseName>User Service API Test Suite:/directory/users/{email}/contacts Test Case->getContacts</testCaseName>
+  </executionNotable>
+</LoadUIBottomTestSteps>

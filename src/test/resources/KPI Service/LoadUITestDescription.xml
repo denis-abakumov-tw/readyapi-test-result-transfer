@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUITestDescription>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>REST</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>GraphQL</scenarioName>
+    <targetCount>2</targetCount>
+  </scenario>
+</LoadUITestDescription>

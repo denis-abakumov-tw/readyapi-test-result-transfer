@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIScenariosResults>
+  <item>
+    <scenariosCount>2</scenariosCount>
+    <scenarioName>REST</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>271</timeTaken>
+        <size>697</size>
+        <startTime>16:09:10</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>266</timeTaken>
+        <size>697</size>
+        <startTime>16:09:58</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>225</timeTaken>
+        <size>697</size>
+        <startTime>16:09:10</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>216</timeTaken>
+        <size>697</size>
+        <startTime>16:09:58</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>191</timeTaken>
+        <size>697</size>
+        <startTime>16:10:27</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>1077</maxTime>
+        <targetName>KPI Service API Test Suite:/kpi/getActionCards</targetName>
+        <requestsCount>1203</requestsCount>
+        <percentile98>119.60</percentile98>
+        <medianTime>35</medianTime>
+        <averageTime>41</averageTime>
+        <percentile75>38.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>78.00</percentile95>
+        <percentile90>47.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>36</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>697</size>
+        <startTime>16:09:06</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>31</timeTaken>
+        <size>697</size>
+        <startTime>16:08:50</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>31</timeTaken>
+        <size>697</size>
+        <startTime>16:08:53</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>31</timeTaken>
+        <size>697</size>
+        <startTime>16:08:54</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>31</timeTaken>
+        <size>697</size>
+        <startTime>16:08:54</startTime>
+        <testCaseName>KPI Service API Test Suite:/kpi/getActionCards->/kpi/getActionCards Request</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>1203</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>1203</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>41</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>1077</param1Value>
+        <param2Value>30</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>1077</maxTime>
+        <targetName>KPI Service API Test Suite:/kpi/getActionCards</targetName>
+        <requestsCount>1203</requestsCount>
+        <percentile98>119.60</percentile98>
+        <medianTime>35</medianTime>
+        <averageTime>41</averageTime>
+        <percentile75>38.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>78.00</percentile95>
+        <percentile90>47.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>36</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>1</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>10 per Sec.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+  <item>
+    <scenariosCount>2</scenariosCount>
+    <scenarioName>GraphQL</scenarioName>
+    <top5Dispersion>
+      <Top5Dispersion>
+        <hintText>This graph shows when the 5 fastest and 5 slowest test case executions happened. The clustered values show the time when the issues occurred during the test run. For example, a lot of values at the beginning of the test might mean that you need a longer warm-up time for the server. Ideally, the values should be distributed evenly throughout the test duration.</hintText>
+        <yAxisName>Duration (ms)</yAxisName>
+        <xAxisName>Time</xAxisName>
+        <values1Title>Top 5</values1Title>
+        <values2Title>Bottom 5</values2Title>
+        <title>Execution dispersion</title>
+        <values2/>
+        <values1/>
+      </Top5Dispersion>
+    </top5Dispersion>
+    <topTestCases/>
+    <bottomTestSteps>
+      <executionNotable>
+        <timeTaken>528</timeTaken>
+        <size>6998</size>
+        <startTime>16:08:43</startTime>
+        <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>518</timeTaken>
+        <size>6998</size>
+        <startTime>16:08:43</startTime>
+        <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>459</timeTaken>
+        <size>6998</size>
+        <startTime>16:08:43</startTime>
+        <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>441</timeTaken>
+        <size>6998</size>
+        <startTime>16:08:43</startTime>
+        <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>436</timeTaken>
+        <size>6998</size>
+        <startTime>16:08:43</startTime>
+        <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+      </executionNotable>
+    </bottomTestSteps>
+    <loadTargetsContinue>
+      <loadTarget>
+        <maxTime>305</maxTime>
+        <targetName>KPI Service API Test Suite:announcement and announcementFilters</targetName>
+        <requestsCount>1250</requestsCount>
+        <percentile98>88.00</percentile98>
+        <medianTime>34</medianTime>
+        <averageTime>37</averageTime>
+        <percentile75>36.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>50.00</percentile95>
+        <percentile90>41.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>17</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>323</maxTime>
+        <targetName>KPI Service API Test Suite:parking and parkingInfo</targetName>
+        <requestsCount>1251</requestsCount>
+        <percentile98>126.80</percentile98>
+        <medianTime>35</medianTime>
+        <averageTime>43</averageTime>
+        <percentile75>37.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>79.00</percentile95>
+        <percentile90>47.80</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>39</standardDeviation>
+      </loadTarget>
+    </loadTargetsContinue>
+    <topTestSteps>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>956</size>
+        <startTime>16:08:54</startTime>
+        <testCaseName>KPI Service API Test Suite:announcement and announcementFilters->announcement and announcementFilters Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>956</size>
+        <startTime>16:08:55</startTime>
+        <testCaseName>KPI Service API Test Suite:announcement and announcementFilters->announcement and announcementFilters Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>956</size>
+        <startTime>16:08:57</startTime>
+        <testCaseName>KPI Service API Test Suite:announcement and announcementFilters->announcement and announcementFilters Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>956</size>
+        <startTime>16:09:06</startTime>
+        <testCaseName>KPI Service API Test Suite:announcement and announcementFilters->announcement and announcementFilters Request</testCaseName>
+      </executionNotable>
+      <executionNotable>
+        <timeTaken>30</timeTaken>
+        <size>6998</size>
+        <startTime>16:08:55</startTime>
+        <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+      </executionNotable>
+    </topTestSteps>
+    <graphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test cases</pieParam2>
+        <pieParam1>Passed test cases</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test case runs, including loops</param1Name>
+        <param2Name>Failed test cases</param2Name>
+        <title>Information on target test cases</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>2502</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Failed test steps</pieParam2>
+        <pieParam1>Passed test steps</pieParam1>
+        <metricsTitle/>
+        <param1Name>Test step runs, including loops</param1Name>
+        <param2Name>Failed test steps</param2Name>
+        <title>Executed test step(s) summary</title>
+        <param3Value>0%</param3Value>
+        <hintText/>
+        <param3Name>Failure ratio</param3Name>
+        <param1Value>2502</param1Value>
+        <param2Value>0</param2Value>
+      </GraphicalData>
+      <GraphicalData>
+        <pieParam2>Minimum</pieParam2>
+        <pieParam1>Maximum</pieParam1>
+        <metricsTitle>ms</metricsTitle>
+        <param1Name>Maximum</param1Name>
+        <param2Name>Minimum</param2Name>
+        <title>Time taken</title>
+        <param3Value>40</param3Value>
+        <hintText>A great difference between time taken (i.e. response time) values may indicate server issues.</hintText>
+        <param3Name>Average</param3Name>
+        <param1Value>323</param1Value>
+        <param2Value>30</param2Value>
+      </GraphicalData>
+    </graphicalData>
+    <bottomTestCases/>
+    <loadTargets>
+      <loadTarget>
+        <maxTime>305</maxTime>
+        <targetName>KPI Service API Test Suite:announcement and announcementFilters</targetName>
+        <requestsCount>1250</requestsCount>
+        <percentile98>88.00</percentile98>
+        <medianTime>34</medianTime>
+        <averageTime>37</averageTime>
+        <percentile75>36.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>50.00</percentile95>
+        <percentile90>41.00</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>17</standardDeviation>
+      </loadTarget>
+      <loadTarget>
+        <maxTime>323</maxTime>
+        <targetName>KPI Service API Test Suite:parking and parkingInfo</targetName>
+        <requestsCount>1251</requestsCount>
+        <percentile98>126.80</percentile98>
+        <medianTime>35</medianTime>
+        <averageTime>43</averageTime>
+        <percentile75>37.00</percentile75>
+        <minTime>30</minTime>
+        <failuresCount>0</failuresCount>
+        <percentile95>79.00</percentile95>
+        <percentile90>47.80</percentile90>
+        <failuresRatio>0</failuresRatio>
+        <standardDeviation>39</standardDeviation>
+      </loadTarget>
+    </loadTargets>
+    <testResults>
+      <metric>
+        <icon>dot.gif</icon>
+        <name/>
+        <category>Base Metrics</category>
+        <value/>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Load profile</name>
+        <category>Scenario overview</category>
+        <value>Fixed</value>
+        <valueIcon>/fixed_load_profile.svg</valueIcon>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Scenario targets</name>
+        <category>Scenario overview</category>
+        <value>2</value>
+        <valueIcon/>
+      </metric>
+      <metric>
+        <icon>dot.gif</icon>
+        <name>Simulated users</name>
+        <category>Scenario overview</category>
+        <value>10 per Sec.</value>
+        <valueIcon/>
+      </metric>
+    </testResults>
+  </item>
+</LoadUIScenariosResults>

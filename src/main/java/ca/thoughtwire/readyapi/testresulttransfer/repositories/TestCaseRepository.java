@@ -4,13 +4,9 @@ import ca.thoughtwire.readyapi.testresulttransfer.models.TestCase;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.util.Optional;
-
 @Repository
-public interface TestCaseRepository extends JpaRepository<TestCase, Long> {
+public interface TestCaseRepository extends JpaRepository<TestCase, Integer> {
 
-    boolean existsByName(String name);
-
-    Optional<TestCase> findByName(String name);
+    TestCase findByName(String testCaseName);
 
 }

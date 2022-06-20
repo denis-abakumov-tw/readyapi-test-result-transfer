@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIBottomTestSteps>
+  <executionNotable>
+    <timeTaken>579</timeTaken>
+    <size>4654</size>
+    <startTime>16:38:15</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/reservationsbyuser/{locationId}/{userId}->getReservationsForUser</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>491</timeTaken>
+    <size>436</size>
+    <startTime>16:38:15</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>488</timeTaken>
+    <size>77588</size>
+    <startTime>16:38:15</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>444</timeTaken>
+    <size>77588</size>
+    <startTime>16:38:15</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/bookableSpaces/{locationID}->getBookableSpaces</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>397</timeTaken>
+    <size>436</size>
+    <startTime>16:38:15</startTime>
+    <testCaseName>Space Booking Service API Test Suite:/amenity/reservationsbyuser/{locationId}->getAmenityReservationsForUser</testCaseName>
+  </executionNotable>
+</LoadUIBottomTestSteps>

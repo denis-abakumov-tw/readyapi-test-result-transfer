@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIScenariosSummary>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>46</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>getBookableAmenities</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>239</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>getAmenityReservationsForUser</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>481</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>getBookableSpaces</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>95</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>findUsers</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>191</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>getReservationsForUser</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+  <result>
+    <executionTime>00:02:05</executionTime>
+    <queuedRequestCount>191</queuedRequestCount>
+    <assertionsCount>0</assertionsCount>
+    <testCaseName>getSpaceDetail</testCaseName>
+    <failedAssertionsCount>0</failedAssertionsCount>
+  </result>
+</LoadUIScenariosSummary>

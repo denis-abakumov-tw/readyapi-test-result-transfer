@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIBottomTestSteps>
+  <executionNotable>
+    <timeTaken>528</timeTaken>
+    <size>6998</size>
+    <startTime>16:08:43</startTime>
+    <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>518</timeTaken>
+    <size>6998</size>
+    <startTime>16:08:43</startTime>
+    <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>459</timeTaken>
+    <size>6998</size>
+    <startTime>16:08:43</startTime>
+    <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>441</timeTaken>
+    <size>6998</size>
+    <startTime>16:08:43</startTime>
+    <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+  </executionNotable>
+  <executionNotable>
+    <timeTaken>436</timeTaken>
+    <size>6998</size>
+    <startTime>16:08:43</startTime>
+    <testCaseName>KPI Service API Test Suite:parking and parkingInfo->parking and parkingInfo Request</testCaseName>
+  </executionNotable>
+</LoadUIBottomTestSteps>

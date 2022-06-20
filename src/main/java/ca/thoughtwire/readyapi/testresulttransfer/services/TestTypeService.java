@@ -17,4 +17,16 @@ public class TestTypeService {
         return testTypeRepository.findAll();
     }
 
+    public TestType findByName(String testTypeName) {
+        return testTypeRepository.findByName(testTypeName);
+    }
+
+    public TestType findByNameOrCreate(String testTypeName) {
+        TestType testType = findByName(testTypeName);
+        if (testType == null) {
+            testType = testTypeRepository.save(new TestType(testTypeName));
+        }
+        return testType;
+    }
+
 }

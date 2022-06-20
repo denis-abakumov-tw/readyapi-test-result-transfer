@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUITestDescription>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>getBookableAmenities</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>getAmenityReservationsForUser</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>getBookableSpaces</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>findUsers</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>getReservationsForUser</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+  <scenario>
+    <profileIcon>/fixed_load_profile.svg</profileIcon>
+    <profileName>Fixed</profileName>
+    <scenarioName>getSpaceDetail</scenarioName>
+    <targetCount>1</targetCount>
+  </scenario>
+</LoadUITestDescription>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LoadUIHelp>
+  <item>
+    <description>When you use the Rate load type, the load profile specifies how many "users" visit the tested server during a time period. The profile does not specify the number of concurrent virtual users on the server, it specifies the number of users arriving to the server.</description>
+    <title>Rate load type</title>
+  </item>
+  <item>
+    <description>In ReadyAPI Performance, there are several ways to specify the load simulated by each scenario. This is called Load allocation. You can enter the total number of users and select what portion of them runs each scenario (Relative allocation), run the same number of virtual users for all scenarios (Equal allocation) or enter the number of users in each scenario individually (Per scenario allocation).</description>
+    <title>Load allocation</title>
+  </item>
+  <item>
+    <description>This load profile simulates the same number of arriving virtual users during the entire test run.</description>
+    <title>Fixed profile (Rate)</title>
+  </item>
+  <item>
+    <description>ReadyAPI Performance uses agents to distribute load to other computers. Load agents run on a physical computer where the LoadUI Agent application is installed. Cloud agents run in the cloud.</description>
+    <title>Agent</title>
+  </item>
+  <item>
+    <description>Failure is a generic term for all issues that cause a simulated user to fail. For example, a test can have failures when load test assertions fail or a test step does not receive a response.</description>
+    <title>Failure</title>
+  </item>
+  <item>
+    <description>Test step and test case failures that happen during the load test run are called errors.</description>
+    <title>Error</title>
+  </item>
+  <item>
+    <description>ReadyAPI Performance runs test cases created in ReadyAPI Test to simulate user behavior. The test cases simulated in a scenario are called targets.</description>
+    <title>Target</title>
+  </item>
+  <item>
+    <description>For test steps, number of times the test step was executed during the second.
+For target test cases, the number of virtual users that finished the test case execution at each second.</description>
+    <title>TPS</title>
+  </item>
+  <item>
+    <description>The number of times the test step was run during the test.</description>
+    <title>Count</title>
+  </item>
+  <item>
+    <description>The time spent to complete different load test units like scenarios, test cases, and test steps in milliseconds:
+- Min: the minimum value
+- Max: the maximum value
+- Median: the median value (the same as 50th percentile)
+- Std dev: the standard deviation - a measure of deviation of results from the mean value
+- Avg: the average value
+- Last: the last returned value
+- 75%: 75th percentile - The lowest value that is greater than 75% of the values (interpolated, inclusive)
+- 90%: 90th percentile - The lowest value that is greater than 90% of the values (interpolated, inclusive)
+- 95%: 95th percentile - The lowest value that is greater than 95% of the values (interpolated, inclusive)
+- 98%: 98th percentile - The lowest value that is greater than 98% of the values (interpolated, inclusive)</description>
+    <title>Time taken metrics</title>
+  </item>
+</LoadUIHelp>

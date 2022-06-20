@@ -5,31 +5,33 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
-@Getter
+@Table(name = "test_case")
 @NoArgsConstructor
+@Getter
+@Setter
 public class TestCase {
 
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    @Column(name = "id")
+    private int id;
 
-    @Setter
+    @Basic
+    @Column(name = "name")
     private String name;
 
-    @Setter
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "test_type_id", nullable = false)
-    private TestType testType;
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private TestSuite testSuite;
 
-    public TestCase(Long id) {
-        this.id = id;
-    }
+    @OneToMany
+    private Collection<TestCaseExecution> testCaseExecutions;
 
-    public TestCase(String name, TestType testType) {
-        this.name = name;
-        this.testType = testType;
+    public TestCase(String testCaseName) {
+        this.name = testCaseName;
     }
 
 }

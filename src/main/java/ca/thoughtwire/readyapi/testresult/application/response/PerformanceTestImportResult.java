@@ -9,8 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@JsonPropertyOrder({"performanceTest"})
+@JsonPropertyOrder({"status", "performanceTest"})
 public class PerformanceTestImportResult implements Serializable {
+
+    public static final String ALREADY_EXISTS = "Already exists";
+
+    public static final String SUCCESSFULLY_IMPORTED = "Successfully imported";
+
+    private String status;
 
     @JsonProperty("performanceTest")
     private final String name;

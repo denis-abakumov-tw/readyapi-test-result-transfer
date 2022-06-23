@@ -59,7 +59,7 @@ create table performance_test_execution
 create table performance_test_execution_result
 (
     id                            serial unique primary key,
-    performance_test_execution_id int not null,
+    performance_test_execution_id int unique not null,
     CONSTRAINT fk_performance_test_execution_result__test_execution_id
         FOREIGN KEY (performance_test_execution_id)
             REFERENCES performance_test_execution (id)
@@ -81,13 +81,14 @@ create table scenario_execution
             REFERENCES performance_test_execution (id),
     CONSTRAINT fk_scenario_execution__scenario_id
         FOREIGN KEY (scenario_id)
-            REFERENCES scenario (id)
+            REFERENCES scenario (id),
+    constraint scenario_execution_unique unique (performance_test_execution_id, scenario_id)
 );
 
 create table scenario_execution_result
 (
     id                    serial unique primary key,
-    scenario_execution_id int not null,
+    scenario_execution_id int unique not null,
     CONSTRAINT fk_scenario_execution_result__scenario_execution_id
         FOREIGN KEY (scenario_execution_id)
             REFERENCES scenario_execution (id)
@@ -98,6 +99,7 @@ create table test_case
     id   serial unique primary key,
     name varchar(255) unique not null
 );
+
 
 create table test_case_execution
 (
@@ -110,6 +112,7 @@ create table test_case_execution
     CONSTRAINT fk_test_case_execution__test_case_id
         FOREIGN KEY (test_case_id)
             REFERENCES test_case (id)
+-- no unique constraint here since ReadyAPI allows to add same test case to a scenario multiple times
 );
 
 create table test_case_execution_metrics
@@ -126,13 +129,14 @@ create table test_case_execution_metrics
     err                    numeric default 0,
     CONSTRAINT fk_test_case_execution_metrics__test_case_execution_id
         FOREIGN KEY (test_case_execution_id)
-            REFERENCES test_case_execution (id)
+            REFERENCES test_case_execution (id),
+    constraint test_case_execution_metrics_unique unique (test_case_execution_id, time_sec)
 );
 
 create table test_case_execution_statistics
 (
     id                     serial unique primary key,
-    test_case_execution_id int not null,
+    test_case_execution_id int unique not null,
     cnt                    numeric default 0,
     min                    numeric default 0,
     max                    numeric default 0,
@@ -170,7 +174,8 @@ create table test_step_execution
             REFERENCES test_case_execution (id),
     CONSTRAINT fk_test_step_execution__test_step_id
         FOREIGN KEY (test_step_id)
-            REFERENCES test_step (id)
+            REFERENCES test_step (id),
+    constraint test_step_execution_unique unique (test_case_execution_id, test_step_id)
 );
 
 create table test_step_execution_metrics
@@ -187,13 +192,14 @@ create table test_step_execution_metrics
     err                    numeric default 0,
     CONSTRAINT fk_test_step_execution_metrics__test_step_execution_id
         FOREIGN KEY (test_step_execution_id)
-            REFERENCES test_step_execution (id)
+            REFERENCES test_step_execution (id),
+    constraint test_step_execution_metrics_unique unique (test_step_execution_id, time_sec)
 );
 
 create table test_step_execution_statistics
 (
     id                     serial unique primary key,
-    test_step_execution_id int not null,
+    test_step_execution_id int unique not null,
     cnt                    numeric default 0,
     min                    numeric default 0,
     max                    numeric default 0,

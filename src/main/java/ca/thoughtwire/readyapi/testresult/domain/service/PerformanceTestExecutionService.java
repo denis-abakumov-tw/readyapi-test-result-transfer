@@ -24,13 +24,9 @@ public class PerformanceTestExecutionService {
         return performanceTestExecutionRepository.findByStartTimeAndPerformanceTestAndTestEnvironment(startTime, performanceTest, testEnvironment);
     }
 
-    public PerformanceTestExecution findOrCreate(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
-        PerformanceTestExecution performanceTestExecution = find(startTime, performanceTest, testEnvironment);
-        if (performanceTestExecution == null) {
-            performanceTestExecution = new PerformanceTestExecution(startTime, performanceTest, testEnvironment);
-            performanceTestExecutionRepository.save(performanceTestExecution);
-        }
-        return performanceTestExecution;
+    public PerformanceTestExecution create(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
+        PerformanceTestExecution performanceTestExecution = new PerformanceTestExecution(startTime, performanceTest, testEnvironment);
+        return performanceTestExecutionRepository.save(performanceTestExecution);
     }
 
 

@@ -75,16 +75,20 @@ public class TestResultTransferService {
         TestType testType = testTypeService.findByNameOrCreate(PerformanceResults.TEST_TYPE);
         PerformanceResults performanceResults = new PerformanceResults();
         performanceResults.collect(resultsFolder);
-
         String performanceTestName = performanceResults.getPerformanceTestName();
         PerformanceTestImportResult importResult = new PerformanceTestImportResult(performanceTestName);
         PerformanceTest performanceTest = performanceTestService.findOrCreate(performanceTestName, testType);
         TestEnvironment testEnvironment = testEnvironmentService.findByNameOrCreate(testEnvironmentName);
-        PerformanceTestExecution performanceTestExecution = performanceTestExecutionService.findOrCreate(performanceResults.getStartTime(), performanceTest, testEnvironment);
-
-        for (ScenarioWrapper scenarioWrapper : performanceResults.getScenarios().values()) {
-            ScenarioImportResult scenarioImportResult = importScenario(performanceTestExecution, scenarioWrapper);
-            importResult.getScenarios().add(scenarioImportResult);
+        PerformanceTestExecution performanceTestExecution = performanceTestExecutionService.find(performanceResults.getStartTime(), performanceTest, testEnvironment);
+        if (performanceTestExecution == null) {
+            performanceTestExecution = performanceTestExecutionService.create(performanceResults.getStartTime(), performanceTest, testEnvironment);
+            for (ScenarioWrapper scenarioWrapper : performanceResults.getScenarios().values()) {
+                ScenarioImportResult scenarioImportResult = importScenario(performanceTestExecution, scenarioWrapper);
+                importResult.getScenarios().add(scenarioImportResult);
+            }
+            importResult.setStatus(PerformanceTestImportResult.SUCCESSFULLY_IMPORTED);
+        } else {
+            importResult.setStatus(PerformanceTestImportResult.ALREADY_EXISTS);
         }
         return importResult;
     }
@@ -95,40 +99,50 @@ public class TestResultTransferService {
         ScenarioExecution scenarioExecution = new ScenarioExecution(performanceTestExecution, scenario);
         scenarioExecutionRepository.save(scenarioExecution);
         for (TestCaseWrapper testCaseWrapper : scenarioWrapper.getTestCases().values()) {
-            TestCaseImportResult testCaseImportResult = new TestCaseImportResult(testCaseWrapper.getName());
+            TestCaseImportResult testCaseImportResult = importTestCase(scenarioExecution, testCaseWrapper);
             scenarioImportResult.getTestCases().add(testCaseImportResult);
-            TestCase testCase = testCaseService.findOrCreate(testCaseWrapper.getName());
-            TestCaseExecution testCaseExecution = new TestCaseExecution(scenarioExecution, testCase);
-            testCaseExecutionRepository.save(testCaseExecution);
-            List<TestCaseExecutionMetrics> testCaseExecutionMetrics = converter.toTestCaseExecutionMetrics(testCaseWrapper.getMetrics());
-            for (TestCaseExecutionMetrics metrics : testCaseExecutionMetrics) {
-                metrics.setTestCaseExecution(testCaseExecution);
-                testCaseExecutionMetricsRepository.save(metrics);
-            }
-            testCaseImportResult.setMetrics(testCaseExecutionMetrics.size());
-            TestCaseExecutionStatistics testCaseExecutionStatistics = converter.toTestCaseExecutionStatistics(testCaseWrapper.getStatistics());
-            testCaseExecutionStatistics.setTestCaseExecution(testCaseExecution);
-            testCaseExecutionStatisticsRepository.save(testCaseExecutionStatistics);
-            testCaseImportResult.setStatisticsImported(true);
-            for (TestStepWrapper testStepWrapper : testCaseWrapper.getTestSteps().values()) {
-                TestStepImportResult testStepImportResult = new TestStepImportResult(testStepWrapper.getName());
-                testCaseImportResult.getTestSteps().add(testStepImportResult);
-                TestStep testStep = testStepService.findOrCreate(testStepWrapper.getName());
-                TestStepExecution testStepExecution = new TestStepExecution(testCaseExecution, testStep);
-                testStepExecutionRepository.save(testStepExecution);
-                List<TestStepExecutionMetrics> testStepExecutionMetrics = converter.toTestStepExecutionMetrics(testStepWrapper.getMetrics());
-                for (TestStepExecutionMetrics metrics : testStepExecutionMetrics) {
-                    metrics.setTestStepExecution(testStepExecution);
-                    testStepExecutionMetricsRepository.save(metrics);
-                }
-                testStepImportResult.setMetrics(testStepExecutionMetrics.size());
-                TestStepExecutionStatistics testStepExecutionStatistics = converter.toTestStepExecutionStatistics(testStepWrapper.getStatistics());
-                testStepExecutionStatistics.setTestStepExecution(testStepExecution);
-                testStepExecutionStatisticsRepository.save(testStepExecutionStatistics);
-                testStepImportResult.setStatisticsImported(true);
-            }
         }
         return scenarioImportResult;
+    }
+
+    private TestCaseImportResult importTestCase(ScenarioExecution scenarioExecution, TestCaseWrapper testCaseWrapper) {
+        TestCaseImportResult testCaseImportResult = new TestCaseImportResult(testCaseWrapper.getName());
+        TestCase testCase = testCaseService.findOrCreate(testCaseWrapper.getName());
+        TestCaseExecution testCaseExecution = new TestCaseExecution(scenarioExecution, testCase);
+        testCaseExecutionRepository.save(testCaseExecution);
+        List<TestCaseExecutionMetrics> testCaseExecutionMetrics = converter.toTestCaseExecutionMetrics(testCaseWrapper.getMetrics());
+        for (TestCaseExecutionMetrics metrics : testCaseExecutionMetrics) {
+            metrics.setTestCaseExecution(testCaseExecution);
+            testCaseExecutionMetricsRepository.save(metrics);
+        }
+        testCaseImportResult.setMetrics(testCaseExecutionMetrics.size());
+        TestCaseExecutionStatistics testCaseExecutionStatistics = converter.toTestCaseExecutionStatistics(testCaseWrapper.getStatistics());
+        testCaseExecutionStatistics.setTestCaseExecution(testCaseExecution);
+        testCaseExecutionStatisticsRepository.save(testCaseExecutionStatistics);
+        testCaseImportResult.setStatisticsImported(true);
+        for (TestStepWrapper testStepWrapper : testCaseWrapper.getTestSteps().values()) {
+            TestStepImportResult testStepImportResult = importTestStep(testCaseExecution, testStepWrapper);
+            testCaseImportResult.getTestSteps().add(testStepImportResult);
+        }
+        return testCaseImportResult;
+    }
+
+    private TestStepImportResult importTestStep(TestCaseExecution testCaseExecution, TestStepWrapper testStepWrapper) {
+        TestStepImportResult testStepImportResult = new TestStepImportResult(testStepWrapper.getName());
+        TestStep testStep = testStepService.findOrCreate(testStepWrapper.getName());
+        TestStepExecution testStepExecution = new TestStepExecution(testCaseExecution, testStep);
+        testStepExecutionRepository.save(testStepExecution);
+        List<TestStepExecutionMetrics> testStepExecutionMetrics = converter.toTestStepExecutionMetrics(testStepWrapper.getMetrics());
+        for (TestStepExecutionMetrics metrics : testStepExecutionMetrics) {
+            metrics.setTestStepExecution(testStepExecution);
+            testStepExecutionMetricsRepository.save(metrics);
+        }
+        testStepImportResult.setMetrics(testStepExecutionMetrics.size());
+        TestStepExecutionStatistics testStepExecutionStatistics = converter.toTestStepExecutionStatistics(testStepWrapper.getStatistics());
+        testStepExecutionStatistics.setTestStepExecution(testStepExecution);
+        testStepExecutionStatisticsRepository.save(testStepExecutionStatistics);
+        testStepImportResult.setStatisticsImported(true);
+        return testStepImportResult;
     }
 
 }

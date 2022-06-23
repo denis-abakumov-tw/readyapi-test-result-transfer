@@ -8,8 +8,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.ZipFile;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,8 +19,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.nio.file.Files;
 import java.nio.file.Path;
-
-import static java.lang.String.format;
 
 @RestController
 @RequestMapping("/testresult")
@@ -36,24 +35,29 @@ public class TestResultController {
     private static final String FAILURE_MESSAGE = "Error occurred, Please contact administrator";
 
     @Operation(summary = "Imports ReadyAPI performance test metrics from LoadUITestStepsHistory.xml")
-    @ApiResponses(value = {@ApiResponse(responseCode = "200", description = "Success flag"),
+    @ApiResponses(value = {@ApiResponse(responseCode = "201", description = "Created"),
+            @ApiResponse(responseCode = "204", description = "Already exists"),
             @ApiResponse(responseCode = "400", description = "Illegal argument"),
             @ApiResponse(responseCode = "500", description = "Unable to import metrics")})
-    @PostMapping("/steps/history")
-    public PerformanceTestImportResult importStepsHistory(@RequestParam @NonNull String environment,
-                                                          @RequestParam("file") MultipartFile file) {
+    @PutMapping("/steps/history")
+    public ResponseEntity<PerformanceTestImportResult> importStepsHistory(@RequestParam @NonNull String environment,
+                                                                          @RequestParam("file") MultipartFile file) {
         try {
             File zip = new File(System.getProperty("java.io.tmpdir"), file.getOriginalFilename());
             file.transferTo(zip);
             try (ZipFile zipFile = new ZipFile(zip)) {
                 Path tempDirWithPrefix = Files.createTempDirectory("ReadyAPI_XML_");
                 zipFile.extractAll(tempDirWithPrefix.toString());
-                return testResultTransferService.importLoadUITestResults(environment, tempDirWithPrefix);
+                PerformanceTestImportResult result = testResultTransferService.importLoadUITestResults(environment, tempDirWithPrefix);
+                if (result.getStatus().equals(PerformanceTestImportResult.ALREADY_EXISTS)) {
+                    return ResponseEntity.noContent().build();
+                }
+                return ResponseEntity.ok(result);
             }
         } catch (Exception e) {
             log.error("Error occurred!", e);
+            return ResponseEntity.internalServerError().body(null);
         }
-        return null;
     }
 
 }

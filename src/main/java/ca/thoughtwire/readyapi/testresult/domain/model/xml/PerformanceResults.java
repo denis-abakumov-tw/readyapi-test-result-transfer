@@ -14,12 +14,15 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 @Data
 public class PerformanceResults {
@@ -41,7 +44,7 @@ public class PerformanceResults {
     private Map<String, ScenarioWrapper> scenarios = new LinkedHashMap<>();
 
     public void collect(Path resultsFolder) throws IOException {
-        setStartTime(getFileCreationTime(resultsFolder));
+        startTime = getEarliestCreationTime(resultsFolder);
         String xml;
 
         // LoadUITestDescription.xml: scenario names
@@ -85,12 +88,19 @@ public class PerformanceResults {
             }
         }
         assert !testStepStatisticsIterator.hasNext();
-        System.out.println(this);
     }
 
-    private static LocalDateTime getFileCreationTime(Path path) throws IOException {
-        FileTime fileTime = (FileTime) Files.getAttribute(path, "creationTime");
-        return LocalDateTime.ofInstant(fileTime.toInstant(), ZoneId.systemDefault()).truncatedTo(ChronoUnit.SECONDS);
+    private static LocalDateTime getEarliestCreationTime(Path path) throws IOException {
+        FileTime earliestCreationTime = FileTime.from(Instant.now());
+        for (Path filePath : Files.list(path).collect(Collectors.toSet())) {
+            if (filePath.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".xml")) {
+                FileTime fileTime = (FileTime) Files.getAttribute(filePath, "creationTime");
+                if (fileTime.compareTo(earliestCreationTime) < 0) {
+                    earliestCreationTime = fileTime;
+                }
+            }
+        }
+        return LocalDateTime.ofInstant(earliestCreationTime.toInstant(), ZoneId.systemDefault()).truncatedTo(ChronoUnit.SECONDS);
     }
 
 }

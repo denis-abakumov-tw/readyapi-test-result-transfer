@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class TestStepsMetrics {
+public class PerformanceMetrics {
 
     @JacksonXmlProperty(localName = "TimeSec.")
     private int timeSec;

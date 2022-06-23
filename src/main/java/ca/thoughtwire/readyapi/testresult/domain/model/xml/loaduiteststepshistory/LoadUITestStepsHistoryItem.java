@@ -5,14 +5,13 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 
-public class LoadUITestStepsHistoryItem implements Iterable<TestStepsMetrics> {
+public class LoadUITestStepsHistoryItem implements Iterable<PerformanceMetrics> {
 
     @JacksonXmlProperty(localName = "testStepName")
     private final TestItemName testStepName = new TestItemName(3);
@@ -20,11 +19,11 @@ public class LoadUITestStepsHistoryItem implements Iterable<TestStepsMetrics> {
     @JacksonXmlProperty(localName = "item")
     @JacksonXmlElementWrapper(localName = "testStepsMetricsDataSource")
     @Getter
-    private final List<TestStepsMetrics> testStepsMetrics = new ArrayList<>();
+    private final List<PerformanceMetrics> performanceMetrics = new ArrayList<>();
 
     @Override
-    public Iterator<TestStepsMetrics> iterator() {
-        return testStepsMetrics.iterator();
+    public Iterator<PerformanceMetrics> iterator() {
+        return performanceMetrics.iterator();
     }
 
     @JsonIgnore

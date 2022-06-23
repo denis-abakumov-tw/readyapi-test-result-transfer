@@ -1,4 +1,4 @@
-package ca.thoughtwire.readyapi.testresult.xml.loaduiteststeps;
+package ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststeps;
 
 import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststeps.LoadUITestSteps;
 import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststeps.LoadUITestStepsItem;

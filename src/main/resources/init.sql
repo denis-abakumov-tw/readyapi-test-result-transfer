@@ -9,11 +9,12 @@ drop table if exists performance_test_execution_result CASCADE;
 drop table if exists scenario CASCADE;
 drop table if exists test_case CASCADE;
 drop table if exists test_case_execution CASCADE;
+drop table if exists test_case_execution_metrics CASCADE;
 drop table if exists test_case_execution_statistics CASCADE;
 drop table if exists scenario_execution CASCADE;
 drop table if exists scenario_execution_result CASCADE;
-drop table if exists test_step_execution_statistics CASCADE;
 drop table if exists test_step_execution_metrics CASCADE;
+drop table if exists test_step_execution_statistics CASCADE;
 
 drop function if exists get_step_execution_metrics(text, text, text, text, timestamp);
 
@@ -111,6 +112,23 @@ create table test_case_execution
             REFERENCES test_case (id)
 );
 
+create table test_case_execution_metrics
+(
+    id                     serial unique primary key,
+    test_case_execution_id int     not null,
+    time_sec               numeric not null,
+    min_ms                 numeric default 0,
+    max_ms                 numeric default 0,
+    median_ms              numeric default 0,
+    last_ms                numeric default 0,
+    cnt                    numeric default 0,
+    tps                    numeric default 0,
+    err                    numeric default 0,
+    CONSTRAINT fk_test_case_execution_metrics__test_case_execution_id
+        FOREIGN KEY (test_case_execution_id)
+            REFERENCES test_case_execution (id)
+);
+
 create table test_case_execution_statistics
 (
     id                     serial unique primary key,
@@ -195,9 +213,10 @@ create table test_step_execution_statistics
 );
 
 
-create or replace function get_step_execution_metrics(test_type_name text, performance_test_name text, scenario_name text,
-                                          test_environment_name text,
-                                          execution_start_time timestamp)
+create or replace function get_step_execution_metrics(test_type_name text, performance_test_name text,
+                                                      scenario_name text,
+                                                      test_environment_name text,
+                                                      execution_start_time timestamp)
     returns table
             (
                 date_time timestamp,

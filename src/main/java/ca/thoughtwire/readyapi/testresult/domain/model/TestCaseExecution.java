@@ -30,4 +30,9 @@ public class TestCaseExecution {
     @JoinColumn(nullable = false)
     private TestCase testCase;
 
+    public TestCaseExecution(ScenarioExecution scenarioExecution, TestCase testCase) {
+        this.scenarioExecution = scenarioExecution;
+        this.testCase = testCase;
+    }
+
 }

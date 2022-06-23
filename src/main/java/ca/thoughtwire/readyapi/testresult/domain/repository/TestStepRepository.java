@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface TestStepRepository extends JpaRepository<TestStep, Integer> {
 
-    Scenario findByName(String scenarioName);
+    TestStep findByName(String scenarioName);
 
 }

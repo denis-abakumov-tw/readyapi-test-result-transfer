@@ -7,11 +7,11 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "test_step_execution_metrics")
+@Table(name = "test_case_execution_metrics")
 @NoArgsConstructor
 @Getter
 @Setter
-public class TestStepExecutionMetrics {
+public class TestCaseExecutionMetrics {
 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
@@ -20,7 +20,7 @@ public class TestStepExecutionMetrics {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private TestStepExecution testStepExecution;
+    private TestCaseExecution testCaseExecution;
 
     @Basic
     @Column(name = "time_sec")

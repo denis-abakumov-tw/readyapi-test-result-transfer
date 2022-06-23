@@ -2,6 +2,7 @@ package ca.thoughtwire.readyapi.testresult.domain.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -29,5 +30,10 @@ public class ScenarioExecution {
     @ManyToOne
     @JoinColumn(nullable = false)
     private Scenario scenario;
+
+    public ScenarioExecution(PerformanceTestExecution performanceTestExecution, Scenario scenario) {
+        this.performanceTestExecution = performanceTestExecution;
+        this.scenario = scenario;
+    }
 
 }

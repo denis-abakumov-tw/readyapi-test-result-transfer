@@ -1,5 +1,6 @@
 package ca.thoughtwire.readyapi.testresult.application.rest;
 
+import ca.thoughtwire.readyapi.testresult.application.response.PerformanceTestImportResult;
 import ca.thoughtwire.readyapi.testresult.domain.service.TestResultTransferService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -39,25 +40,20 @@ public class TestResultController {
             @ApiResponse(responseCode = "400", description = "Illegal argument"),
             @ApiResponse(responseCode = "500", description = "Unable to import metrics")})
     @PostMapping("/steps/history")
-    public String importStepsHistory(@RequestParam @NonNull String environment,
-                                     @RequestParam("file") MultipartFile file) {
-        int records = -1;
+    public PerformanceTestImportResult importStepsHistory(@RequestParam @NonNull String environment,
+                                                          @RequestParam("file") MultipartFile file) {
         try {
             File zip = new File(System.getProperty("java.io.tmpdir"), file.getOriginalFilename());
             file.transferTo(zip);
             try (ZipFile zipFile = new ZipFile(zip)) {
                 Path tempDirWithPrefix = Files.createTempDirectory("ReadyAPI_XML_");
                 zipFile.extractAll(tempDirWithPrefix.toString());
-                records = testResultTransferService.importLoadUITestStepsHistory(environment, tempDirWithPrefix);
+                return testResultTransferService.importLoadUITestResults(environment, tempDirWithPrefix);
             }
         } catch (Exception e) {
             log.error("Error occurred!", e);
         }
-        if (records >= 0) {
-            return format(SUCCESS_MESSAGE_METRICS, records);
-        } else {
-            return FAILURE_MESSAGE;
-        }
+        return null;
     }
 
 }

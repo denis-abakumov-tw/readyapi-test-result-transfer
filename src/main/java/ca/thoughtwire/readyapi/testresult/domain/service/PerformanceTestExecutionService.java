@@ -27,10 +27,7 @@ public class PerformanceTestExecutionService {
     public PerformanceTestExecution findOrCreate(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
         PerformanceTestExecution performanceTestExecution = find(startTime, performanceTest, testEnvironment);
         if (performanceTestExecution == null) {
-            performanceTestExecution = new PerformanceTestExecution();
-            performanceTestExecution.setStartTime(startTime);
-            performanceTestExecution.setPerformanceTest(performanceTest);
-            performanceTestExecution.setTestEnvironment(testEnvironment);
+            performanceTestExecution = new PerformanceTestExecution(startTime, performanceTest, testEnvironment);
             performanceTestExecutionRepository.save(performanceTestExecution);
         }
         return performanceTestExecution;

@@ -38,4 +38,10 @@ public class PerformanceTestExecution {
     @JoinColumn(nullable = false)
     private TestEnvironment testEnvironment;
 
+    public PerformanceTestExecution(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
+        this.startTime = startTime;
+        this.performanceTest = performanceTest;
+        this.testEnvironment = testEnvironment;
+    }
+
 }

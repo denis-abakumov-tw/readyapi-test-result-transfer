@@ -30,4 +30,9 @@ public class TestStepExecution {
     @JoinColumn(nullable = false)
     private TestStep testStep;
 
+    public TestStepExecution(TestCaseExecution testCaseExecution, TestStep testStep) {
+        this.testCaseExecution = testCaseExecution;
+        this.testStep = testStep;
+    }
+
 }

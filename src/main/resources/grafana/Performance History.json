@@ -1,0 +1,370 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_POSTGRESQL",
+      "label": "PostgreSQL",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "postgres",
+      "pluginName": "PostgreSQL"
+    }
+  ],
+  "__elements": [],
+  "__requires": [
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "9.0.0"
+    },
+    {
+      "type": "datasource",
+      "id": "postgres",
+      "name": "PostgreSQL",
+      "version": "1.0.0"
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 1657049609632,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "postgres",
+        "uid": "${DS_POSTGRESQL}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "datasource": {
+            "type": "postgres",
+            "uid": "${DS_POSTGRESQL}"
+          },
+          "format": "time_series",
+          "group": [],
+          "metricColumn": "none",
+          "rawQuery": true,
+          "rawSql": "SELECT pte.start_time as \"time\", tses.min, tses.max, tses.avg, tses.median\nFROM test_step_execution_statistics tses\n         join test_step_execution tse on tses.test_step_execution_id = tse.id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join scenario s on s.id = se.scenario_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\n         join performance_test pt on pt.id = pte.performance_test_id\n         join test_environment te on pte.test_environment_id = te.id\nwhere tse.test_step_id = '$_TestStepID'\n  and pt.id = '$_PerformanceTestID'\n  and te.id = '$_TestEnvironmentID'\norder by pte.start_time;",
+          "refId": "A",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "column"
+              }
+            ]
+          ],
+          "timeColumn": "time",
+          "where": [
+            {
+              "name": "$__timeFilter",
+              "params": [],
+              "type": "macro"
+            }
+          ]
+        }
+      ],
+      "title": "Request Performance",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": false,
+  "schemaVersion": 36,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select name\nfrom performance_test\nwhere id in (select performance_test_id\n             from performance_test_execution\n             where test_environment_id = $_TestEnvironmentID);",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Performance Test",
+        "multi": false,
+        "name": "PerformanceTest",
+        "options": [],
+        "query": "select name\nfrom performance_test\nwhere id in (select performance_test_id\n             from performance_test_execution\n             where test_environment_id = $_TestEnvironmentID);",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select name\nfrom test_environment;",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Environment",
+        "multi": false,
+        "name": "TestEnvironment",
+        "options": [],
+        "query": "select name\nfrom test_environment;",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select to_char(start_time, 'YYYY-MM-DD HH24:MI:SS')\nfrom performance_test_execution\nwhere test_environment_id = '${_TestEnvironmentID}'\n  and performance_test_id = '${_PerformanceTestID}';",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Start Time",
+        "multi": false,
+        "name": "StartTime",
+        "options": [],
+        "query": "select to_char(start_time, 'YYYY-MM-DD HH24:MI:SS')\nfrom performance_test_execution\nwhere test_environment_id = '${_TestEnvironmentID}'\n  and performance_test_id = '${_PerformanceTestID}';",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 3,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select id\nfrom performance_test\nwhere name = '${PerformanceTest}';",
+        "hide": 2,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "_PerformanceTestID",
+        "options": [],
+        "query": "select id\nfrom performance_test\nwhere name = '${PerformanceTest}';",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select id\nfrom test_environment\nwhere name = '$TestEnvironment';",
+        "hide": 2,
+        "includeAll": false,
+        "label": "",
+        "multi": false,
+        "name": "_TestEnvironmentID",
+        "options": [],
+        "query": "select id\nfrom test_environment\nwhere name = '$TestEnvironment';",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select name\nfrom test_step ts\n         join test_step_execution tse on ts.id = tse.test_step_id\nwhere tse.test_case_execution_id in\n      (select id\n       from test_case_execution\n       where scenario_execution_id in\n             (select id\n              from scenario_execution\n              where performance_test_execution_id = $_PerformanceTestExecutionID)\n    );",
+        "hide": 0,
+        "includeAll": false,
+        "label": "Request",
+        "multi": false,
+        "name": "TestStep",
+        "options": [],
+        "query": "select name\nfrom test_step ts\n         join test_step_execution tse on ts.id = tse.test_step_id\nwhere tse.test_case_execution_id in\n      (select id\n       from test_case_execution\n       where scenario_execution_id in\n             (select id\n              from scenario_execution\n              where performance_test_execution_id = $_PerformanceTestExecutionID)\n    );",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select id\nfrom performance_test_execution\nwhere performance_test_id = '$_PerformanceTestID'\n  and start_time = '$StartTime'\n  and test_environment_id = '$_TestEnvironmentID';",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "_PerformanceTestExecutionID",
+        "options": [],
+        "query": "select id\nfrom performance_test_execution\nwhere performance_test_id = '$_PerformanceTestID'\n  and start_time = '$StartTime'\n  and test_environment_id = '$_TestEnvironmentID';",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select id\nfrom test_step\nwhere name = '${TestStep}';",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "_TestStepID",
+        "options": [],
+        "query": "select id\nfrom test_step\nwhere name = '${TestStep}';",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "postgres",
+          "uid": "${DS_POSTGRESQL}"
+        },
+        "definition": "select tse.id\nfrom test_step_execution tse\n         join test_step ts on ts.id = tse.test_step_id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join test_case tc on tc.id = tce.test_case_id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join scenario s on s.id = se.scenario_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\n         join performance_test pt on pt.id = pte.performance_test_id\nwhere ts.id = '$_TestStepID'\nand pte.id = '$_PerformanceTestExecutionID';",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "_TestStepExecutionID",
+        "options": [],
+        "query": "select tse.id\nfrom test_step_execution tse\n         join test_step ts on ts.id = tse.test_step_id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join test_case tc on tc.id = tce.test_case_id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join scenario s on s.id = se.scenario_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\n         join performance_test pt on pt.id = pte.performance_test_id\nwhere ts.id = '$_TestStepID'\nand pte.id = '$_PerformanceTestExecutionID';",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "2022-06-17T22:57:14.000Z",
+    "to": "2022-06-20T16:32:06.000Z"
+  },
+  "timepicker": {
+    "hidden": true
+  },
+  "timezone": "",
+  "title": "Performance History",
+  "uid": "Unp-W893nz",
+  "version": 2,
+  "weekStart": ""
+}

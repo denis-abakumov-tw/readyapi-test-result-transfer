@@ -16,7 +16,7 @@ drop table if exists scenario_execution_result CASCADE;
 drop table if exists test_step_execution_metrics CASCADE;
 drop table if exists test_step_execution_statistics CASCADE;
 
-drop function if exists get_step_execution_metrics(text, text, text, text, timestamp);
+drop function if exists get_test_step_execution_metrics(text, text, text, text, timestamp);
 
 create table test_type
 (
@@ -111,8 +111,10 @@ create table test_case_execution
             REFERENCES scenario_execution (id),
     CONSTRAINT fk_test_case_execution__test_case_id
         FOREIGN KEY (test_case_id)
-            REFERENCES test_case (id)
--- no unique constraint here since ReadyAPI allows to add same test case to a scenario multiple times
+            REFERENCES test_case (id),
+-- Although ReadyAPI allows to add same test case to a scenario multiple times,
+-- the following unique constraint was introduces to prevent reporting ambiguous results
+    constraint test_case_execution_unique unique (scenario_execution_id, test_case_id)
 );
 
 create table test_case_execution_metrics
@@ -218,11 +220,8 @@ create table test_step_execution_statistics
             REFERENCES test_step_execution (id)
 );
 
-
-create or replace function get_step_execution_metrics(test_type_name text, performance_test_name text,
-                                                      scenario_name text,
-                                                      test_environment_name text,
-                                                      execution_start_time timestamp)
+create or replace function get_test_step_execution_metrics(_test_step_execution_id int,
+                                                      _execution_start_time timestamp)
     returns table
             (
                 date_time timestamp,
@@ -236,30 +235,45 @@ create or replace function get_step_execution_metrics(test_type_name text, perfo
             )
 as
 $$
-SELECT to_timestamp(extract(epoch from execution_start_time) + 36000 + time_sec) AS "time",
-       min_ms                                                                    AS "Min Request Time (ms)",
-       max_ms                                                                    AS "Max Request Time (ms)",
-       median_ms                                                                 AS "Median Request Time (ms)",
-       last_ms                                                                   AS "Last Request (ms)",
-       cnt                                                                       AS "Request Counts",
-       tps                                                                       AS "Tx per Second",
-       err                                                                       AS "Errors"
+SELECT to_timestamp(extract(epoch from _execution_start_time) + 36000 + time_sec) AS "time",
+       min_ms                                                                     AS "Min Request Time, ms",
+       max_ms                                                                     AS "Max Request Time, ms",
+       median_ms                                                                  AS "Median Request Time, ms",
+       last_ms                                                                    AS "Last Request, ms",
+       cnt                                                                        AS "Request Counts",
+       tps                                                                        AS "Tx per Second",
+       err                                                                        AS "Errors"
 FROM test_step_execution_metrics
-where test_step_execution_id = (select id
-                                from scenario_execution
-                                where scenario_id = (select id
-                                                     from scenario
-                                                     where name = scenario_name)
-                                  and performance_test_execution_id = (select id
-                                                                       from performance_test_execution
-                                                                       where test_environment_id =
-                                                                             (select id from test_environment where name = test_environment_name)
-                                                                         and start_time = execution_start_time
-                                                                         and performance_test_id =
-                                                                             (select id
-                                                                              from performance_test
-                                                                              where name = performance_test_name
-                                                                                and test_type_id = (select id from test_type where name = test_type_name))))
+where test_step_execution_id = _test_step_execution_id
+order by time_sec;
+$$
+    language sql;
+
+create or replace function get_test_case_execution_metrics(_test_case_execution_id int,
+                                                      _execution_start_time timestamp)
+    returns table
+            (
+                date_time timestamp,
+                min_ms    numeric,
+                max_ms    numeric,
+                median_ms numeric,
+                last_ms   numeric,
+                cnt       numeric,
+                tps       numeric,
+                err       numeric
+            )
+as
+$$
+SELECT to_timestamp(extract(epoch from _execution_start_time) + 36000 + time_sec) AS "time",
+       min_ms                                                                     AS "Min Request Time, ms",
+       max_ms                                                                     AS "Max Request Time, ms",
+       median_ms                                                                  AS "Median Request Time, ms",
+       last_ms                                                                    AS "Last Request, ms",
+       cnt                                                                        AS "Request Counts",
+       tps                                                                        AS "Tx per Second",
+       err                                                                        AS "Errors"
+FROM test_case_execution_metrics
+where test_case_execution_id = _test_case_execution_id
 order by time_sec;
 $$
     language sql;

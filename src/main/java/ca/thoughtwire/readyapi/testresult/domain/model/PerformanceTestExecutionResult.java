@@ -19,7 +19,7 @@ public class PerformanceTestExecutionResult {
     private int id;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "performance_test_execution_id", nullable = false)
     private PerformanceTestExecution performanceTestExecution;
 
 }

@@ -20,7 +20,7 @@ public class ScenarioExecutionResult {
     private int id;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "scenario_execution_id", nullable = false)
     private ScenarioExecution scenarioExecution;
 
 }

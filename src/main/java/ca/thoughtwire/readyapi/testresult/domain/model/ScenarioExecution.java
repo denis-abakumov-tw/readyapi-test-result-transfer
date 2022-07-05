@@ -20,11 +20,11 @@ public class ScenarioExecution {
     @Column(name = "id")
     private int id;
 
-    @OneToMany
+    @OneToMany(mappedBy = "scenarioExecution")
     private Collection<ScenarioExecutionResult> scenarioExecutionResults;
 
     @ManyToOne
-    @JoinColumn(nullable = false)
+    @JoinColumn(name = "performance_test_execution_id", nullable = false)
     private PerformanceTestExecution performanceTestExecution;
 
     @ManyToOne

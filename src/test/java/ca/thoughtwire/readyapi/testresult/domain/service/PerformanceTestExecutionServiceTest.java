@@ -38,29 +38,12 @@ public class PerformanceTestExecutionServiceTest {
     }
 
     @Test
-    public void whenFindOrCreateExistingPerformanceTestExecution_ThenExistingPerformanceTestExecutionIsReturned() {
+    public void whenFindExistingPerformanceTestExecution_ThenExistingPerformanceTestExecutionIsReturned() {
         final String testSuiteName = "KPI Service Test";
         LocalDateTime startTime = LocalDateTime.parse("2022-06-15T21:10:03");
         PerformanceTest performanceTest = performanceTestService.findByName(testSuiteName);
         TestEnvironment testEnvironment = testEnvironmentService.findByName("Dev");
         PerformanceTestExecution performanceTestExecution = performanceTestExecutionService.find(startTime, performanceTest, testEnvironment);
-        assertNotNull(performanceTestExecution);
-        performanceTestExecution = performanceTestExecutionService.findOrCreate(startTime, performanceTest, testEnvironment);
-        assertNotNull(performanceTestExecution);
-        assertEquals(startTime, performanceTestExecution.getStartTime());
-    }
-
-    @Test
-    public void whenFindOrCreateNonExistingPerformanceTestExecution_ThenNewPerformanceTestExecutionIsReturned() {
-        final String testSuiteName = "New Test Suite Execution";
-        LocalDateTime startTime = LocalDateTime.parse("2022-06-15T21:10:03");
-        final String testTypeName = "Performance";
-        TestType testType = testTypeService.findByName(testTypeName);
-        PerformanceTest performanceTest = performanceTestService.findOrCreate(testSuiteName, testType);
-        TestEnvironment testEnvironment = testEnvironmentService.findByName("Dev");
-        PerformanceTestExecution performanceTestExecution = performanceTestExecutionService.find(startTime, performanceTest, testEnvironment);
-        assertNull(performanceTestExecution);
-        performanceTestExecution = performanceTestExecutionService.findOrCreate(startTime, performanceTest, testEnvironment);
         assertNotNull(performanceTestExecution);
         assertEquals(startTime, performanceTestExecution.getStartTime());
     }

@@ -71,12 +71,14 @@ public class TestResultTransferService {
      * @param testEnvironmentName name of the machine where the tests were executed.
      * @param resultsFolder       folder with XML files exported from ReadyAPI.
      */
-    public PerformanceTestImportResult importLoadUITestResults(String testEnvironmentName, Path resultsFolder) throws IOException {
+    public PerformanceTestImportResult importPerformanceResults(String testEnvironmentName, Path resultsFolder) throws IOException {
         TestType testType = testTypeService.findByNameOrCreate(PerformanceResults.TEST_TYPE);
         PerformanceResults performanceResults = new PerformanceResults();
         performanceResults.collect(resultsFolder);
         String performanceTestName = performanceResults.getPerformanceTestName();
         PerformanceTestImportResult importResult = new PerformanceTestImportResult(performanceTestName);
+        importResult.setEnvironment(testEnvironmentName);
+        importResult.setCreated(performanceResults.getStartTime());
         PerformanceTest performanceTest = performanceTestService.findOrCreate(performanceTestName, testType);
         TestEnvironment testEnvironment = testEnvironmentService.findByNameOrCreate(testEnvironmentName);
         PerformanceTestExecution performanceTestExecution = performanceTestExecutionService.find(performanceResults.getStartTime(), performanceTest, testEnvironment);

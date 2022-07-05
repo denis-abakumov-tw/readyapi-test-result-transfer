@@ -1,5 +1,6 @@
 package ca.thoughtwire.readyapi.testresult.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -24,18 +25,22 @@ public class PerformanceTestExecution {
     @Column(name = "start_time")
     private LocalDateTime startTime;
 
-    @OneToMany
+    @OneToMany(mappedBy = "performanceTestExecution")
+    @JsonIgnore
     private Collection<ScenarioExecution> scenarioExecutions;
 
-    @OneToMany
+    @OneToMany(mappedBy = "performanceTestExecution")
+    @JsonIgnore
     private Collection<PerformanceTestExecutionResult> performanceTestExecutionResults;
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    @JsonIgnore
     private PerformanceTest performanceTest;
 
     @ManyToOne
     @JoinColumn(nullable = false)
+    @JsonIgnore
     private TestEnvironment testEnvironment;
 
     public PerformanceTestExecution(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {

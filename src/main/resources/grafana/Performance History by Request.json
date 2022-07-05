@@ -57,7 +57,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1657055796895,
+  "iteration": 1657058566718,
   "links": [
     {
       "asDropdown": true,
@@ -232,8 +232,8 @@
       },
       "gridPos": {
         "h": 12,
-        "w": 15,
-        "x": 5,
+        "w": 18,
+        "x": 0,
         "y": 0
       },
       "id": 2,
@@ -249,6 +249,8 @@
         }
       },
       "pluginVersion": "9.0.0",
+      "repeat": "TestStep",
+      "repeatDirection": "v",
       "targets": [
         {
           "datasource": {
@@ -260,7 +262,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "select pte.start_time \"time\",\n       tses.min,\n       tses.max,\n       tses.tps \"Rate, req/s\",\n       tses.failure_ratio \"Errors, %\",\n       tses.avg \"Duration avg, ms\",\n       tses.percentile75,\n       tses.percentile90,\n       tses.percentile95,\n       tses.percentile98,\n       tses.median\nfrom test_step_execution_statistics tses\n         join test_step_execution tse on tse.id = tses.test_step_execution_id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\nwhere tse.test_step_id = '$_TestStepID';",
+          "rawSql": "select pte.start_time \"time\",\n       tses.min,\n       tses.max,\n       tses.tps \"Rate, req/s\",\n       tses.failure_ratio \"Errors, %\",\n       tses.avg \"Duration avg, ms\",\n       tses.percentile75,\n       tses.percentile90,\n       tses.percentile95,\n       tses.percentile98,\n       tses.median\nfrom test_step_execution_statistics tses\n         join test_step_execution tse on tse.id = tses.test_step_execution_id\n         join test_step ts on ts.id = tse.test_step_id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\nwhere ts.name = $TestStep;",
           "refId": "A",
           "select": [
             [
@@ -282,7 +284,7 @@
           ]
         }
       ],
-      "title": "Performance History",
+      "title": "Performance History - $TestStep",
       "type": "timeseries"
     }
   ],
@@ -373,6 +375,7 @@
         "type": "query"
       },
       {
+        "allValue": "*",
         "current": {},
         "datasource": {
           "type": "postgres",
@@ -380,31 +383,12 @@
         },
         "definition": "select name\nfrom test_step ts\n         join test_step_execution tse on ts.id = tse.test_step_id\nwhere tse.test_case_execution_id in\n      (select id\n       from test_case_execution\n       where scenario_execution_id in\n             (select id\n              from scenario_execution\n              where performance_test_execution_id in\n                    (select id\n                     from performance_test_execution\n                     where performance_test_id = '$_PerformanceTestID'\n                       and test_environment_id = '$_TestEnvironmentID')));",
         "hide": 0,
-        "includeAll": false,
+        "includeAll": true,
         "label": "Request",
-        "multi": false,
+        "multi": true,
         "name": "TestStep",
         "options": [],
         "query": "select name\nfrom test_step ts\n         join test_step_execution tse on ts.id = tse.test_step_id\nwhere tse.test_case_execution_id in\n      (select id\n       from test_case_execution\n       where scenario_execution_id in\n             (select id\n              from scenario_execution\n              where performance_test_execution_id in\n                    (select id\n                     from performance_test_execution\n                     where performance_test_id = '$_PerformanceTestID'\n                       and test_environment_id = '$_TestEnvironmentID')));",
-        "refresh": 1,
-        "regex": "",
-        "skipUrlSync": false,
-        "sort": 0,
-        "type": "query"
-      },
-      {
-        "current": {},
-        "datasource": {
-          "type": "postgres",
-          "uid": "${DS_POSTGRESQL}"
-        },
-        "definition": "select id\nfrom test_step\nwhere name = '${TestStep}';",
-        "hide": 2,
-        "includeAll": false,
-        "multi": false,
-        "name": "_TestStepID",
-        "options": [],
-        "query": "select id\nfrom test_step\nwhere name = '${TestStep}';",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -415,7 +399,7 @@
   },
   "time": {
     "from": "2022-07-05T11:50:09.000Z",
-    "to": "2022-07-05T14:54:27.000Z"
+    "to": "2022-07-05T16:26:20.000Z"
   },
   "timepicker": {
     "hidden": true
@@ -423,6 +407,6 @@
   "timezone": "",
   "title": "Performance History by Request",
   "uid": "performance-history-by-request",
-  "version": 1,
+  "version": 5,
   "weekStart": ""
 }

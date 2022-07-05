@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.0.0"
+      "version": "9.0.2"
     },
     {
       "type": "datasource",
@@ -63,8 +63,21 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1657049579683,
-  "links": [],
+  "iteration": 1657055787081,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": true,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "Dashboards",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    }
+  ],
   "liveNow": false,
   "panels": [
     {
@@ -119,7 +132,7 @@
         },
         "showHeader": false
       },
-      "pluginVersion": "9.0.0",
+      "pluginVersion": "9.0.2",
       "targets": [
         {
           "datasource": {
@@ -130,7 +143,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "WITH stats AS(\n      SELECT 01 AS Position, 'Sample count'          AS Metric, cnt || ''                        AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 02 AS Position, 'Min req. duration'     AS Metric, min || ' ms'                     AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 03 AS Position, 'Max req. duration'     AS Metric, max || ' ms'                     AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 04 AS Position, 'Avg req. duration'     AS Metric, avg || ' ms'                     AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 07 AS Position, 'Standard deviation'    AS Metric, round(std_dev, 0) || ' ms'       AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 08 AS Position, 'Min avg req. duration' AS Metric, round(min_avg, 0) || ' ms'       AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 09 AS Position, 'Max avg req. duration' AS Metric, round(max_avg, 0) || ' ms'       AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 05 AS Position, 'Errors'                AS Metric, failure || ' (' || round(failure_ratio * 100, 0) || '%)' AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 07 AS Position, '75th percentile'       AS Metric, round(percentile75, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 08 AS Position, '90th percentile'       AS Metric, round(percentile90, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 09 AS Position, '95th percentile'       AS Metric, round(percentile95, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 10 AS Position, '98th percentile'       AS Metric, round(percentile98, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 11 AS Position, 'Median req. duration'  AS Metric, round(median, 0) || ' ms'        AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 12 AS Position, 'Last req. duration'    AS Metric, last || ' ms'                    AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 13 AS Position, 'Trans. per second'     AS Metric, round(tps, 2) || ''                        AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID')\nSELECT Metric, Value FROM stats ORDER BY Position;",
+          "rawSql": "WITH stats AS(\n      SELECT 01 AS Position, 'Sample count'          AS Metric, cnt || ''                        AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 02 AS Position, 'Min req. duration'     AS Metric, min || ' ms'                     AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 03 AS Position, 'Max req. duration'     AS Metric, max || ' ms'                     AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 04 AS Position, 'Avg req. duration'     AS Metric, avg || ' ms'                     AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 07 AS Position, 'Standard deviation'    AS Metric, round(std_dev, 0) || ' ms'       AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 08 AS Position, 'Min avg req. duration' AS Metric, round(min_avg, 0) || ' ms'       AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 09 AS Position, 'Max avg req. duration' AS Metric, round(max_avg, 0) || ' ms'       AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 05 AS Position, 'Errors'                AS Metric, failure || ' (' || round(failure_ratio, 0) || '%)' AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 07 AS Position, '75th percentile'       AS Metric, round(percentile75, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 08 AS Position, '90th percentile'       AS Metric, round(percentile90, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 09 AS Position, '95th percentile'       AS Metric, round(percentile95, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 10 AS Position, '98th percentile'       AS Metric, round(percentile98, 0) || ' ms'  AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 11 AS Position, 'Median req. duration'  AS Metric, round(median, 0) || ' ms'        AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 12 AS Position, 'Last req. duration'    AS Metric, last || ' ms'                    AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID'\nUNION SELECT 13 AS Position, 'Trans. per second'     AS Metric, round(tps, 2) || ''                        AS Value FROM test_case_execution_statistics where test_case_execution_id = '$_TestCaseExecutionID')\nSELECT Metric, Value FROM stats ORDER BY Position;",
           "refId": "A",
           "select": [
             [
@@ -534,7 +547,7 @@
   },
   "timezone": "",
   "title": "Performance by Test Case",
-  "uid": "bjkhbkJHGUKYGB",
-  "version": 7,
+  "uid": "performance-by-test-case",
+  "version": 1,
   "weekStart": ""
 }

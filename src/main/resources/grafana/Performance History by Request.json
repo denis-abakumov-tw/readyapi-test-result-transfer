@@ -15,7 +15,7 @@
       "type": "grafana",
       "id": "grafana",
       "name": "Grafana",
-      "version": "9.0.0"
+      "version": "9.0.2"
     },
     {
       "type": "datasource",
@@ -57,8 +57,21 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1657049617831,
-  "links": [],
+  "iteration": 1657055796895,
+  "links": [
+    {
+      "asDropdown": true,
+      "icon": "external link",
+      "includeVars": true,
+      "keepTime": false,
+      "tags": [],
+      "targetBlank": false,
+      "title": "Dashboards",
+      "tooltip": "",
+      "type": "dashboards",
+      "url": ""
+    }
+  ],
   "liveNow": false,
   "panels": [
     {
@@ -117,7 +130,105 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "[^,]+"
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "Duration.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "blue",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "Errors,.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "dark-red",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "Rate,.+"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "fixedColor": "green",
+                  "mode": "fixed"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*, req/s$"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "reqps"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*, ms$"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "ms"
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": ".*, %$"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "percent"
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 12,
@@ -149,7 +260,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "select pte.start_time \"time\",\n       tses.min,\n       tses.max,\n       tses.avg,\n       tses.failure_ratio,\n       tses.percentile75,\n       tses.percentile90,\n       tses.percentile95,\n       tses.percentile98,\n       tses.median,\n       tses.tps\nfrom test_step_execution_statistics tses\n         join test_step_execution tse on tse.id = tses.test_step_execution_id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\nwhere tse.test_step_id = '$_TestStepID';",
+          "rawSql": "select pte.start_time \"time\",\n       tses.min,\n       tses.max,\n       tses.tps \"Rate, req/s\",\n       tses.failure_ratio \"Errors, %\",\n       tses.avg \"Duration avg, ms\",\n       tses.percentile75,\n       tses.percentile90,\n       tses.percentile95,\n       tses.percentile98,\n       tses.median\nfrom test_step_execution_statistics tses\n         join test_step_execution tse on tse.id = tses.test_step_execution_id\n         join test_case_execution tce on tse.test_case_execution_id = tce.id\n         join scenario_execution se on se.id = tce.scenario_execution_id\n         join performance_test_execution pte on pte.id = se.performance_test_execution_id\nwhere tse.test_step_id = '$_TestStepID';",
           "refId": "A",
           "select": [
             [
@@ -303,15 +414,15 @@
     ]
   },
   "time": {
-    "from": "2022-06-20T21:40:20.000Z",
-    "to": "2022-06-20T21:42:21.000Z"
+    "from": "2022-07-05T11:50:09.000Z",
+    "to": "2022-07-05T14:54:27.000Z"
   },
   "timepicker": {
     "hidden": true
   },
   "timezone": "",
   "title": "Performance History by Request",
-  "uid": "Unp-W98nzhg",
-  "version": 5,
+  "uid": "performance-history-by-request",
+  "version": 1,
   "weekStart": ""
 }

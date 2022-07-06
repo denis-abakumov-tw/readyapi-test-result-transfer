@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,15 +18,15 @@ public class PerformanceTestImportResult implements Serializable {
 
     public static final String SUCCESSFULLY_IMPORTED = "Successfully imported";
 
+    @JsonProperty("performanceTest")
+    private final String name;
+
     private String status;
 
     private String environment;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy hh:mm:ss")
-    private LocalDateTime created;
-
-    @JsonProperty("performanceTest")
-    private final String name;
+    private ZonedDateTime created;
 
     private List<ScenarioImportResult> scenarios = new ArrayList<>();
 

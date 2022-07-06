@@ -7,7 +7,7 @@ import ca.thoughtwire.readyapi.testresult.domain.repository.PerformanceTestExecu
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Service
@@ -20,11 +20,11 @@ public class PerformanceTestExecutionService {
         return performanceTestExecutionRepository.findAll();
     }
 
-    public PerformanceTestExecution find(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
+    public PerformanceTestExecution find(ZonedDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
         return performanceTestExecutionRepository.findByStartTimeAndPerformanceTestAndTestEnvironment(startTime, performanceTest, testEnvironment);
     }
 
-    public PerformanceTestExecution create(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
+    public PerformanceTestExecution create(ZonedDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
         PerformanceTestExecution performanceTestExecution = new PerformanceTestExecution(startTime, performanceTest, testEnvironment);
         return performanceTestExecutionRepository.save(performanceTestExecution);
     }

@@ -21,6 +21,8 @@ import java.util.List;
 @Service
 public class TestResultTransferService {
 
+    private final EntityConverter converter = new EntityConverter();
+
     @Autowired
     private TestTypeService testTypeService;
 
@@ -62,8 +64,6 @@ public class TestResultTransferService {
 
     @Autowired
     private TestStepExecutionStatisticsRepository testStepExecutionStatisticsRepository;
-
-    private final EntityConverter converter = new EntityConverter();
 
     /**
      * Import performance test results from ReadyAPI XMLs into the database.

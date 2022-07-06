@@ -15,8 +15,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.attribute.FileTime;
 import java.time.Instant;
-import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -37,11 +37,24 @@ public class PerformanceResults {
 
     private static final XmlMapper XML_MAPPER = new XmlMapper();
 
-    private LocalDateTime startTime;
+    private ZonedDateTime startTime;
 
     private String performanceTestName;
 
     private Map<String, ScenarioWrapper> scenarios = new LinkedHashMap<>();
+
+    private static ZonedDateTime getEarliestCreationTime(Path path) throws IOException {
+        FileTime earliestCreationTime = FileTime.from(Instant.now());
+        for (Path filePath : Files.list(path).collect(Collectors.toSet())) {
+            if (filePath.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".xml")) {
+                FileTime fileTime = (FileTime) Files.getAttribute(filePath, "creationTime");
+                if (fileTime.compareTo(earliestCreationTime) < 0) {
+                    earliestCreationTime = fileTime;
+                }
+            }
+        }
+        return ZonedDateTime.ofInstant(earliestCreationTime.toInstant(), ZoneId.systemDefault()).truncatedTo(ChronoUnit.SECONDS);
+    }
 
     public void collect(Path resultsFolder) throws IOException {
         startTime = getEarliestCreationTime(resultsFolder);
@@ -88,19 +101,6 @@ public class PerformanceResults {
             }
         }
         assert !testStepStatisticsIterator.hasNext();
-    }
-
-    private static LocalDateTime getEarliestCreationTime(Path path) throws IOException {
-        FileTime earliestCreationTime = FileTime.from(Instant.now());
-        for (Path filePath : Files.list(path).collect(Collectors.toSet())) {
-            if (filePath.getFileName().toString().toLowerCase(Locale.ROOT).endsWith(".xml")) {
-                FileTime fileTime = (FileTime) Files.getAttribute(filePath, "creationTime");
-                if (fileTime.compareTo(earliestCreationTime) < 0) {
-                    earliestCreationTime = fileTime;
-                }
-            }
-        }
-        return LocalDateTime.ofInstant(earliestCreationTime.toInstant(), ZoneId.systemDefault()).truncatedTo(ChronoUnit.SECONDS);
     }
 
 }

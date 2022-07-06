@@ -43,7 +43,7 @@ create table performance_test
 create table performance_test_execution
 (
     id                  serial unique primary key,
-    start_time          timestamp(0),
+    start_time          TIMESTAMP(0) WITH TIME ZONE,
     performance_test_id int not null,
     test_environment_id int not null,
     CONSTRAINT fk_performance_test_execution__performance_test_id

@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 import java.util.Collection;
 
 @Entity
@@ -23,7 +23,7 @@ public class PerformanceTestExecution {
 
     @Basic
     @Column(name = "start_time")
-    private LocalDateTime startTime;
+    private ZonedDateTime startTime;
 
     @OneToMany(mappedBy = "performanceTestExecution")
     @JsonIgnore
@@ -43,7 +43,7 @@ public class PerformanceTestExecution {
     @JsonIgnore
     private TestEnvironment testEnvironment;
 
-    public PerformanceTestExecution(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
+    public PerformanceTestExecution(ZonedDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment) {
         this.startTime = startTime;
         this.performanceTest = performanceTest;
         this.testEnvironment = testEnvironment;

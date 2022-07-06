@@ -6,11 +6,11 @@ import ca.thoughtwire.readyapi.testresult.domain.model.TestEnvironment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Repository
 public interface PerformanceTestExecutionRepository extends JpaRepository<PerformanceTestExecution, Integer> {
 
-    PerformanceTestExecution findByStartTimeAndPerformanceTestAndTestEnvironment(LocalDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment);
+    PerformanceTestExecution findByStartTimeAndPerformanceTestAndTestEnvironment(ZonedDateTime startTime, PerformanceTest performanceTest, TestEnvironment testEnvironment);
 
 }

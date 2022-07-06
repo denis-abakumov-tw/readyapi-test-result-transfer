@@ -22,14 +22,10 @@ insert into test_step (name) values ('parking and parkingInfo');
 insert into test_environment (name) values ('Dev');
 insert into test_environment (name) values ('QA');
 
-insert into performance_test_execution (start_time, performance_test_id, test_environment_id) values ('2022-06-15 21:10:03', 1, 1);
-insert into performance_test_execution (start_time, performance_test_id, test_environment_id) values ('2022-07-13 11:20:05', 2, 2);
-insert into performance_test_execution (start_time, performance_test_id, test_environment_id) values ('2022-08-10 01:30:07', 3, 1);
+insert into performance_test_execution (start_time, performance_test_id, test_environment_id) values ('2022-06-15 21:10:03+00:00', 1, 1);
+insert into performance_test_execution (start_time, performance_test_id, test_environment_id) values ('2022-07-13 11:20:05+00:00', 2, 2);
+insert into performance_test_execution (start_time, performance_test_id, test_environment_id) values ('2022-08-10 01:30:07+00:00', 3, 1);
 
-insert into scenario_execution (performance_test_execution_id, scenario_id) values (1, 1);
-insert into scenario_execution (performance_test_execution_id, scenario_id) values (1, 2);
-insert into scenario_execution (performance_test_execution_id, scenario_id) values (1, 1);
-insert into scenario_execution (performance_test_execution_id, scenario_id) values (1, 2);
 insert into scenario_execution (performance_test_execution_id, scenario_id) values (1, 1);
 insert into scenario_execution (performance_test_execution_id, scenario_id) values (1, 2);
 

@@ -57,7 +57,7 @@
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1657058566718,
+  "iteration": 1657123755447,
   "links": [
     {
       "asDropdown": true,
@@ -128,25 +128,10 @@
                 "value": 80
               }
             ]
-          }
+          },
+          "unit": "reqps"
         },
         "overrides": [
-          {
-            "matcher": {
-              "id": "byRegexp",
-              "options": "[^,]+"
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": true,
-                  "tooltip": true,
-                  "viz": true
-                }
-              }
-            ]
-          },
           {
             "matcher": {
               "id": "byRegexp",
@@ -227,6 +212,22 @@
                 "value": "percent"
               }
             ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "[^,]+"
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": true,
+                  "tooltip": true,
+                  "viz": true
+                }
+              }
+            ]
           }
         ]
       },
@@ -248,7 +249,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "9.0.0",
+      "pluginVersion": "9.0.2",
       "repeat": "TestStep",
       "repeatDirection": "v",
       "targets": [
@@ -398,8 +399,8 @@
     ]
   },
   "time": {
-    "from": "2022-07-05T11:50:09.000Z",
-    "to": "2022-07-05T16:26:20.000Z"
+    "from": "2022-07-05T16:50:09.000Z",
+    "to": "2022-07-06T16:01:34.000Z"
   },
   "timepicker": {
     "hidden": true
@@ -407,6 +408,6 @@
   "timezone": "",
   "title": "Performance History by Request",
   "uid": "performance-history-by-request",
-  "version": 5,
+  "version": 9,
   "weekStart": ""
 }

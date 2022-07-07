@@ -78,7 +78,8 @@ public class TestResultTransferService {
         String performanceTestName = performanceResults.getPerformanceTestName();
         PerformanceTestImportResult importResult = new PerformanceTestImportResult(performanceTestName);
         importResult.setEnvironment(testEnvironmentName);
-        importResult.setCreated(performanceResults.getStartTime());
+        importResult.setStartTime(performanceResults.getStartTime());
+        importResult.setEndTime(performanceResults.getEndTime());
         PerformanceTest performanceTest = performanceTestService.findOrCreate(performanceTestName, testType);
         TestEnvironment testEnvironment = testEnvironmentService.findByNameOrCreate(testEnvironmentName);
         PerformanceTestExecution performanceTestExecution = performanceTestExecutionService.find(performanceResults.getStartTime(), performanceTest, testEnvironment);

@@ -6,6 +6,7 @@ import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststeps.LoadU
 import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststeps.TestStatistics;
 import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststepshistory.LoadUITestStepsHistory;
 import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststepshistory.LoadUITestStepsHistoryItem;
+import ca.thoughtwire.readyapi.testresult.domain.model.xml.loaduiteststepshistory.PerformanceMetrics;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import lombok.Data;
 
@@ -18,10 +19,7 @@ import java.time.Instant;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.temporal.ChronoUnit;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.Locale;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Data
@@ -38,6 +36,8 @@ public class PerformanceResults {
     private static final XmlMapper XML_MAPPER = new XmlMapper();
 
     private ZonedDateTime startTime;
+
+    private ZonedDateTime endTime;
 
     private String performanceTestName;
 
@@ -58,6 +58,7 @@ public class PerformanceResults {
 
     public void collect(Path resultsFolder) throws IOException {
         startTime = getEarliestCreationTime(resultsFolder);
+        endTime = startTime;
         String xml;
 
         // LoadUITestDescription.xml: scenario names
@@ -86,15 +87,20 @@ public class PerformanceResults {
             TestCaseWrapper testCaseWrapper = scenarioWrapper.getTestCases().getOrDefault(item.getTestCaseName(), new TestCaseWrapper(item.getTestCaseName()));
             scenarioWrapper.getTestCases().put(item.getTestCaseName(), testCaseWrapper);
             String testStepName = item.getTestStepName();
+            List<PerformanceMetrics> metrics = item.getPerformanceMetrics();
+            ZonedDateTime lastMetricTime = startTime.plus(metrics.get(metrics.size() - 1).getTimeSec(), ChronoUnit.SECONDS);
+            if (lastMetricTime.isAfter(endTime)) {
+                endTime = lastMetricTime;
+            }
             if (testStepName.equals("Total")) {
-                testCaseWrapper.setMetrics(item.getPerformanceMetrics());
+                testCaseWrapper.setMetrics(metrics);
                 // LoadUITestSteps.xml: test case level data
                 assert testStatistics.getTestStep().equals("Test Case Level");
                 testCaseWrapper.setStatistics(testStatistics);
             } else {
                 TestStepWrapper testStepWrapper = testCaseWrapper.getTestSteps().getOrDefault(testStepName, new TestStepWrapper(testStepName));
                 testCaseWrapper.getTestSteps().put(testStepName, testStepWrapper);
-                testStepWrapper.setMetrics(item.getPerformanceMetrics());
+                testStepWrapper.setMetrics(metrics);
                 // LoadUITestSteps.xml: test step level data
                 assert testStepName.equals(testStatistics.getTestStep());
                 testStepWrapper.setStatistics(testStatistics);

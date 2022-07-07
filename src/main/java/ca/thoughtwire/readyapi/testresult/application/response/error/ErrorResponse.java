@@ -1,18 +1,16 @@
 package ca.thoughtwire.readyapi.testresult.application.response.error;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 
-import java.util.Date;
+import java.time.ZonedDateTime;
 
 @Getter
 @Setter
 public class ErrorResponse {
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
-    private Date timestamp;
+    private ZonedDateTime timestamp;
 
     private int code;
 
@@ -25,7 +23,7 @@ public class ErrorResponse {
     private Object data;
 
     public ErrorResponse() {
-        timestamp = new Date();
+        timestamp = ZonedDateTime.now();
     }
 
     public ErrorResponse(HttpStatus httpStatus, String message) {

@@ -1,6 +1,5 @@
 package ca.thoughtwire.readyapi.testresult.application.response;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import lombok.Data;
@@ -25,8 +24,9 @@ public class PerformanceTestImportResult implements Serializable {
 
     private String environment;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy hh:mm:ss")
-    private ZonedDateTime created;
+    private ZonedDateTime startTime;
+
+    private ZonedDateTime endTime;
 
     private List<ScenarioImportResult> scenarios = new ArrayList<>();
 
